@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flip_card/flip_card.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'headsupstart.dart';
-import 'HeadsUpResult.dart';
+//import 'package:flutter_screenutil/flutter_screenutil.dart';
+//import 'headsupstart.dart';
+//import 'HeadsUpResult.dart';
 import '../models/iCueCard.dart';
 
 class MistakesReview extends StatefulWidget {
