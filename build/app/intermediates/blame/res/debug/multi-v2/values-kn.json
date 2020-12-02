@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kn\\values-kn.xml",
+            "outputFile": "C:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kn\\values-kn.xml",
             "map": [
                 {
                     "source": "C:\\Users\\andii\\.gradle\\caches\\transforms-2\\files-2.1\\9637b06a317c6d2f8f218b6a122e67af\\jetified-play-services-basement-17.0.0\\res\\values-kn\\values.xml",

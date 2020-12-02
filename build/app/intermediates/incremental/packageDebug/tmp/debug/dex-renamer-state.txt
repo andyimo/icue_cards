@@ -1,7 +1,7 @@
-#Tue Dec 01 23:45:53 EST 2020
-base.2=C\:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes2.dex
-base.1=C\:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
-base.0=C\:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Wed Dec 02 10:48:33 EST 2020
+base.2=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes2.dex
+base.1=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.0=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.9=classes_6.dex
 path.8=classes_5.dex
 path.7=classes_4.dex
@@ -25,13 +25,13 @@ renamed.0=classes.dex
 renamed.11=classes12.dex
 renamed.10=classes11.dex
 path.11=classes_8.dex
-base.11=C\:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_8.dex
+base.11=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_8.dex
 path.10=classes_7.dex
-base.10=C\:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_7.dex
-base.9=C\:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_6.dex
-base.8=C\:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_5.dex
-base.7=C\:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_4.dex
-base.6=C\:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_3.dex
-base.5=C\:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_2.dex
-base.4=C\:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_1.dex
-base.3=C\:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_0.dex
+base.10=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_7.dex
+base.9=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_6.dex
+base.8=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_5.dex
+base.7=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_4.dex
+base.6=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_3.dex
+base.5=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_2.dex
+base.4=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_1.dex
+base.3=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_0.dex

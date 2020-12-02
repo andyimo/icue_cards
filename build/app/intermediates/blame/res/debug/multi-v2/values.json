@@ -1,8 +1,44 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\andii\\Developper\\iCueCards\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\andii\\Developper\\icue_cards\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,310,392,496,605,725,825",
+                        "endColumns": "143,110,81,103,108,119,99,76",
+                        "endOffsets": "194,305,387,491,600,720,820,897"
+                    },
+                    "to": {
+                        "startLines": "104,105,106,107,108,109,110,111",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "7730,7874,7985,8067,8171,8280,8400,8500",
+                        "endColumns": "143,110,81,103,108,119,99,76",
+                        "endOffsets": "7869,7980,8062,8166,8275,8395,8495,8572"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\andii\\Developper\\icue_cards\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "173,816",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "465,980"
+                    },
+                    "to": {
+                        "startLines": "113,118",
+                        "startColumns": "4,4",
+                        "startOffsets": "8648,8945",
+                        "endLines": "117,120",
+                        "endColumns": "12,12",
+                        "endOffsets": "8940,9109"
+                    }
+                },
                 {
                     "source": "C:\\Users\\andii\\.gradle\\caches\\transforms-2\\files-2.1\\e2cbed2957b394f95064983fb1c91c8e\\play-services-base-17.0.0\\res\\values\\values.xml",
                     "from": {
@@ -20,23 +56,6 @@
                         "endLines": "2,3,4,5,6,7,8,9,86,87,88,89,90,91,92,93,95,96,97,98,99,100,101,102,103,272,291",
                         "endColumns": "89,79,89,89,79,80,79,79,104,180,124,106,179,122,115,102,187,104,180,124,174,147,62,61,78,20,20",
                         "endOffsets": "190,270,360,450,530,611,691,771,5497,5678,5803,5910,6090,6213,6329,6432,6787,6892,7073,7198,7373,7521,7584,7646,7725,17727,18144"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\andii\\Developper\\iCueCards\\build\\app\\generated\\res\\google-services\\debug\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,310,392,496,605,725,825",
-                        "endColumns": "143,110,81,103,108,119,99,76",
-                        "endOffsets": "194,305,387,491,600,720,820,897"
-                    },
-                    "to": {
-                        "startLines": "104,105,106,107,108,109,110,111",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "7730,7874,7985,8067,8171,8280,8400,8500",
-                        "endColumns": "143,110,81,103,108,119,99,76",
-                        "endOffsets": "7869,7980,8062,8166,8275,8395,8495,8572"
                     }
                 },
                 {
@@ -73,25 +92,6 @@
                         "startOffsets": "5259,6437",
                         "endColumns": "67,166",
                         "endOffsets": "5322,6599"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\andii\\Developper\\iCueCards\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "173,816",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "465,980"
-                    },
-                    "to": {
-                        "startLines": "113,118",
-                        "startColumns": "4,4",
-                        "startOffsets": "8648,8945",
-                        "endLines": "117,120",
-                        "endColumns": "12,12",
-                        "endOffsets": "8940,9109"
                     }
                 }
             ]
