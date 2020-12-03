@@ -7,7 +7,6 @@ import 'package:icue_cards/views/login_register_pages/login_page.dart';
 import 'package:provider/provider.dart';
 import 'package:icue_cards/views/card_view.dart';
 import 'package:icue_cards/views/create_card.dart';
-import 'package:icue_cards/views/card_list.dart';
 import 'package:get/get.dart';
 import 'package:icue_cards/views/dir_root.dart';
 import 'package:icue_cards/views/game_home_page.dart';
@@ -27,10 +26,13 @@ class MyApp extends StatelessWidget {
               context.read<AuthenticationService>().authStateChanges,
         ),
       ],
+      child: AuthenticationWrapper(),
+      /*
       child: MaterialApp(
         title: 'Quick and Dirty Login Page',
         home: AuthenticationWrapper(),
       ),
+      */
     );
   }
 }
@@ -58,10 +60,9 @@ Future<void> main() async {
     routes: {
       '/': (context) => MyApp(),
       '/home': (context) => HomePage(),
-      '/lists': (context) => Lists(),
       '/newCard': (context) => NewCard(),
       '/cardView': (context) => CardView(),
-      '/mainDirectory': (context) => mainDirectory(),
+      '/mainDirectory': (context) => MainDirectory(),
       '/decks': (context) => directoryDeck(),
       '/games': (context) => MyHomePage(),
       '/kahoot': (context) => BottomNavigationWidget(),

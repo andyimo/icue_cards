@@ -16,12 +16,16 @@ class HomePage extends StatelessWidget {
               },
               child: Text("SIGN OUT"),
             ),
-            /*
             ElevatedButton(
-              child: Text("Going to cue cards page"),
-              onPressed() {}
-            ),
-            */
+                child: Text("Going to cue cards page"),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/mainDirectory');
+                }),
+            ElevatedButton(
+                child: Text("Going to game home screen"),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/games');
+                }),
           ],
         ),
       ),
