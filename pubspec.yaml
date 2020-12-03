@@ -46,12 +46,11 @@ dependencies:
   cupertino_icons: ^0.1.3
   condition: ^0.0.8
   orientation: ^1.2.0
+  firebase_auth: ^0.14.0+5
+  cloud_firestore: ^0.13.0+1
+  firebase_core: ^0.4.2+1
+  provider: ^4.3.2+2 # may have to change version numbers to match
   flutter_spinkit: "^4.1.2"
-
-  #Firebase
-  firebase_auth: "^0.18.3+1"
-  firebase_core: "^0.5.2+1"
-  provider: "^4.3.2+1"
 
 
 dev_dependencies:
@@ -92,12 +91,11 @@ flutter:
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-  fonts:
-    - family: Habel
-      fonts:
-        - asset: fonts/HabelRegular.ttf
-    - family: Nawabiat
-      fonts:
-        - asset: fonts/Nawabiat.ttf
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -11,12 +11,12 @@ import 'package:reorderables/reorderables.dart';
 import 'dir_folder.dart';
 import './card_list.dart';
 
-class MainDirectory extends StatefulWidget {
+class mainDirectory extends StatefulWidget {
   @override
-  _MainDirectoryState createState() => _MainDirectoryState();
+  _mainDirectoryState createState() => _mainDirectoryState();
 }
 
-class _MainDirectoryState extends State<MainDirectory> {
+class _mainDirectoryState extends State<mainDirectory> {
   Root root = new Root("root");
   MultiSelectController controller = new MultiSelectController();
   List folders = new List();
