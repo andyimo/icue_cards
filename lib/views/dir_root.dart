@@ -39,8 +39,8 @@ class _MainDirectoryState extends State<MainDirectory> {
 
     Deck deck = Deck("Development Processes");
     Deck deck2 = Deck("Chapter 2");
-    Deck deck3 = Deck("Chapeter 3");
-    Deck deck4 = Deck("Software Architecture");
+    Deck deck3 = Deck("Software Architecture");
+    Deck deck4 = Deck("Architectural Styles");
     Deck deck5 = Deck("Design Patterns");
 
     folder.addDeck(deck);
@@ -48,6 +48,87 @@ class _MainDirectoryState extends State<MainDirectory> {
     folder.addDeck(deck3);
     folder.addDeck(deck4);
     folder.addDeck(deck5);
+
+    deck4.addCard(new iCueCard(
+        frontSide: 'Standard Design Strategy',
+        backSide:
+            'aka. Linear\n(1) Feasibility Stage: Brainstorm a set of feasible concepts. (2) Preliminary Design Stage: Select and develop the best concept. (3) Detailed Design Stage: Develop engineering descriptions of the concept. (4) Planning Stage'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Cyclic Design Strategy',
+        backSide:
+            'Similar to Standard Design Strategy but can revert back to an earlier stage.'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Parallel Design Strategy',
+        backSide: 'Independent alternatives are explored in parallel'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Adaptive Design Stategy',
+        backSide:
+            'The next design strategy of the design activity is decided at the end of a given stage.'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Incremental Design Strategy',
+        backSide:
+            'Each stage of development is treated as a task of incrementally improving the existing design'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Architectural Style',
+        backSide:
+            'Defines the components and connectors of a system (what?); not domain specific'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Architectural Pattern',
+        backSide:
+            'Defines the implementation strategies of connectors and components in a system (how!); domain specific'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Language-Based Style',
+        backSide:
+            'Architectural Style influenced by the programming language being used. e.g. Object-Oriented and Main-and-Subroutines'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Main Program and Subroutines Style',
+        backSide:
+            'Type of Language-Based Style. Components are (1) a main program, and (2) some subroutines. Connected together by function calls. Data is passed in/out of subroutines.'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Object-oriented Style',
+        backSide:
+            'Type of Language-Based Style. Objects encapsulate state and accessing functions. State is strongly encapsulated. Not particularly efficient.'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Layered Style',
+        backSide:
+            'Each layer exposes an API to be used by the layers above it. Each layer acts as a client (service consumer of the layer below) and a server (service provider to the layer above).'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Strict Layering',
+        backSide:
+            'Type of Layered Architectural Style. A top layer can only use the resources/API of the layer directly below it.'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Nonstrict Layering',
+        backSide:
+            'Type of Layered Architectural Style. A top layer can acccess the resources and API of any layer below it.'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Client-Server Style',
+        backSide:
+            'Type of Layered Architectural Style. Only two layers (client and server). Client initates communication by sending server a request. Server performs the requested action and replies.'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Virtual Machines',
+        backSide:
+            'Type of Layered Architectural Style. Ordered sequence of layers, each layer offering services to be used by programs residing in the layer(s) above it.'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Dataflow Style',
+        backSide:
+            'Architectural style with a focus on how data moves between processing elements'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Batch-Sequential Style',
+        backSide:
+            'Type of Dataflow Style. Separate programs executed in rigid order. Aggregated data (on magnetic tape) transferred by the user from one program to another)'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'Pipe and Filter',
+        backSide:
+            'Type of Dataflow Style. Separate programs are executed (potentially concurrently). Independent programs (components) are connected by pipes (routers of data streams) provided by the OS'));
+    deck4.addCard(new iCueCard(
+        frontSide: 'BlackBoard Style',
+        backSide:
+            'Type of Shared Memory Style. Separate programs (aka Knowledge Sources) that communicate through a shared repository called the Blackboard. '));
+    deck4.addCard(new iCueCard(
+      frontSide: 'Interpreter Style',
+      backSide:
+          'Translates source code into an executable one instruction at a time. Parses and executes input commands, updating the state maintained by the interpreter.',
+    ));
 
     deck3.addCard(new iCueCard(
         frontSide: 'Software Architecture',
