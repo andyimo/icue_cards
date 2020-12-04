@@ -1,32 +1,32 @@
-/* What sorts of information do we need to store for the user in the cloud
-   i.e. what stuff do we need to remember for the user when they sign back in?
-   - language
-   - theme 
-   - name 
-   - cue card decks
-   - file system???
-*/
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:icue_cards/views/dir_root.dart';
+import 'package:icue_cards/models/student.dart';
 
 class DatabaseService {
   final String uid;
   DatabaseService({this.uid});
 
   // collection reference
-  final CollectionReference cuecardCollection =
-      Firestore.instance.collection('cuecards');
+  final CollectionReference users = Firestore.instance.collection('users');
 
 // when a new user signs up, we want to create a document for that user in the
 // cuecardsCollection.
-  Future updateUserData(String language, String name) async {
-    return await cuecardCollection.document(uid).setData({
-      'langage': language,
+  Future updateUserData(String name, MainDirectory mainDirectory) async {
+    return await users.document(uid).setData({
+      'mainDirectory': mainDirectory,
       'name': name,
     });
   }
 
+  List<Student> _mainDirectoryFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc) {
+      return Student(
+          name: doc.data['name'], mainDirectory: doc.data['mainDirectory']);
+    }).toList();
+  }
+
   // get cuecardcollection stream
-  Stream<QuerySnapshot> get icuecards {
-    return cuecardCollection.snapshots();
+  Stream<List<Student>> get userStream {
+    return users.snapshots().map(_mainDirectoryFromSnapshot);
   }
 }

@@ -58,7 +58,8 @@ class AuthService {
 
       // create a new document for the user with their uid (firecloud)
       // give the user default parameters
-      await DatabaseService(uid: user.uid).updateUserData("English", "Anon.");
+      await DatabaseService(uid: user.uid)
+          .updateUserData("generic_username", null);
       return user.uid;
     } catch (e) {
       print(e.toString());

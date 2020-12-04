@@ -9,19 +9,20 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:get/get.dart';
 import 'package:reorderables/reorderables.dart';
 
-class directoryDeck extends StatefulWidget {
+class DirectoryDeck extends StatefulWidget {
   final Folder folder;
-  directoryDeck({this.folder});
+  DirectoryDeck({this.folder});
   @override
-  _directoryDeckState createState() => _directoryDeckState(this.folder);
+  _DirectoryDeckState createState() => _DirectoryDeckState(this.folder);
 }
 
-class _directoryDeckState extends State<directoryDeck> {
+class _DirectoryDeckState extends State<DirectoryDeck> {
   MultiSelectController controller = new MultiSelectController();
   Folder folder;
-  _directoryDeckState(Folder folder) {
+  _DirectoryDeckState(Folder folder) {
     this.folder = folder;
   }
+
   @override
   void initState() {
     controller.set(folder.getLength());

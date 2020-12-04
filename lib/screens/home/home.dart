@@ -2,13 +2,13 @@
    [List the things it needs to do here]
    Author: Andy Tran
 */
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:nice_button/NiceButton.dart';
 import '../../services/auth.dart';
 import 'package:icue_cards/services/database.dart';
 import 'package:provider/provider.dart';
-import 'package:nice_button/nice_button.dart';
-import 'package:icue_cards/main.dart';
+//import 'package:icue_cards/main.dart';
+import 'package:icue_cards/models/student.dart';
 
 class Home extends StatelessWidget {
   // You need this to access signOut()
@@ -16,8 +16,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<QuerySnapshot>.value(
-      value: DatabaseService().icuecards,
+    return StreamProvider<List<Student>>.value(
+      value: DatabaseService().userStream,
       child: Scaffold(
           backgroundColor: Colors.brown[50],
           appBar: AppBar(
