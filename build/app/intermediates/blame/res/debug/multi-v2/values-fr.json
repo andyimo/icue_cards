@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fr\\values-fr.xml",
+            "outputFile": "C:\\Users\\Mechrevo\\Desktop\\3004GitVersion\\icue_cards\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fr\\values-fr.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\andii\\.gradle\\caches\\transforms-2\\files-2.1\\9637b06a317c6d2f8f218b6a122e67af\\jetified-play-services-basement-17.0.0\\res\\values-fr\\values.xml",
+                    "source": "C:\\Users\\Mechrevo\\.gradle\\caches\\transforms-2\\files-2.1\\3b35c8809ab3eb3c2dab13e7348811c4\\jetified-play-services-basement-17.0.0\\res\\values-fr\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\andii\\.gradle\\caches\\transforms-2\\files-2.1\\e2cbed2957b394f95064983fb1c91c8e\\play-services-base-17.0.0\\res\\values-fr\\values.xml",
+                    "source": "C:\\Users\\Mechrevo\\.gradle\\caches\\transforms-2\\files-2.1\\e2cbed2957b394f95064983fb1c91c8e\\play-services-base-17.0.0\\res\\values-fr\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\andii\\.gradle\\caches\\transforms-2\\files-2.1\\2fd120cf3914717770a6ae02cf1e7da4\\core-1.1.0\\res\\values-fr\\values-fr.xml",
+                    "source": "C:\\Users\\Mechrevo\\.gradle\\caches\\transforms-2\\files-2.1\\2fd120cf3914717770a6ae02cf1e7da4\\core-1.1.0\\res\\values-fr\\values-fr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

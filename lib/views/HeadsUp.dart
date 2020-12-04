@@ -3,21 +3,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'HeadsUpResult.dart';
 import '../models/iCueCard.dart';
+import '../models/deck.dart';
 
 class HeadsUp extends StatefulWidget {
+  final Deck deck;
   final String category;
   final String questionNum;
   //final int ori;
-  HeadsUp({this.category, this.questionNum});
+  HeadsUp({this.deck, this.category, this.questionNum});
 
   @override
-  _HeadsUpState createState() => _HeadsUpState();
+  _HeadsUpState createState() => 
+      _HeadsUpState(deck: this.deck, category: this.category, questionNum: this.questionNum);
 }
 
 class _HeadsUpState extends State<HeadsUp> {
-  int _score = 0;
+  final Deck deck;
+  final String category;
+  final String questionNum;
+  _HeadsUpState({this.deck, this.category, this.questionNum});
 
+  //the variable to record the score
+  int _score = 0;
+  //all the cards stored in this list
+  List<iCueCard> cards = new List<iCueCard>();
   //List<String> cards = ["user case", "windows", "linux", "user story", "POSIX", "filesystem"]; //in the future, this will read from database, just for testing
+  /*
   List<iCueCard> cards = [
     iCueCard(frontSide: 'who is the NBA G.O.A.T. ?', backSide: 'LeBron James'),
     iCueCard(
@@ -25,11 +36,41 @@ class _HeadsUpState extends State<HeadsUp> {
             "What is the last name of Jackie Chan's character in Rush Hour?",
         backSide: 'Lee'),
     iCueCard(frontSide: 'sample question', backSide: 'sample answer')
-  ];
+  ];*/
+  //store the wrong guess cards
   List<iCueCard> mistakes = [];
   int index = 0;
   bool isOver = false; //the boolen value which states if the game is over
+  int roundNum;
 
+  @override
+  void initState() {
+    super.initState();
+
+    // horizontal view
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
+
+    cards = deck.getCards();
+    if(questionNum == "5"){
+      roundNum = 5;
+    }
+    if(questionNum == "10"){
+      roundNum = 10;
+    }
+    if(questionNum == "15"){
+      roundNum = 15;
+    }
+    if(questionNum == "20"){
+      roundNum = 20;
+    }
+    if(questionNum == "20"){
+      roundNum = cards.length;
+    }
+    if(roundNum >= cards.length){
+      roundNum = cards.length;
+    }
+  }
   /*
   @override
   void initState() {
@@ -39,14 +80,6 @@ class _HeadsUpState extends State<HeadsUp> {
     ///强制竖屏
     OrientationPlugin.forceOrientation(DeviceOrientation.landscapeRight);
   }*/
-  @override
-  void initState() {
-    super.initState();
-    // horizontal view
-    SystemChrome.setPreferredOrientations(
-        [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
-  }
-
   /*
   @override
   Future<void> dispose() async {
@@ -69,7 +102,7 @@ class _HeadsUpState extends State<HeadsUp> {
       //index++;
       int length = cards.length; //check point is at length-1
       print("length is $length");
-      if (index == 2) {
+      if (index == length-1) {
         isOver = true;
         Navigator.push(
           context,
@@ -89,7 +122,7 @@ class _HeadsUpState extends State<HeadsUp> {
       mistakes.add(cards[index]);
       //index++;
       int length = cards.length; //check point is at length-1
-      if (index == 2) {
+      if (index == length-1) {
         //determine if the game is over
         isOver = true;
         Navigator.push(
@@ -105,7 +138,7 @@ class _HeadsUpState extends State<HeadsUp> {
 
   @override
   Widget build(BuildContext context) {
-    if (index >= 3) {
+    if (index >= cards.length) {
       //this if means checking when the index is out of range, reset into the range
       index = 0;
     }

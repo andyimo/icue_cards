@@ -25,4 +25,8 @@ class Root {
     _folders.removeAt(index);
     return temp;
   }
+
+  void addFolder(Folder f) {
+    _folders.add(f);
+  }
 }
