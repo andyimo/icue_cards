@@ -30,6 +30,8 @@ Name   : Andy Tran (101124547)
    cue card, or folder will be detected and sent over to Firebase. Integrating
    this would require adding this all throughout Henry's code which is a mountain
    too high for me to scale :(
+ - Hard coded about 7 lectures worth of material as sample cue cards (for presentation 
+   purposes)
 
  - My focus will shift to improving the UI of the login, registration, and
    home page (for the presentation) as well as hardcoding some of the
