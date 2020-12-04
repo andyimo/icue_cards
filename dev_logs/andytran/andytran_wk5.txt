@@ -1,0 +1,26 @@
+Team   : Ogre Fanclub
+Project: ICUE CARDS
+Name   : Andy Tran (101124547)
+
+                              WEEKLY DEV LOG 5
+                       October 18 - October 24, 2020
+      ------------------------------------------------------------------
+
+ - Firebase setup on the console.firebase.google.com website
+ - Basic modules created for the login, register, and home pages
+ - Login and Register currently are identical (but one says Register and the
+   other says Login)
+ - Home page is currently empty
+ - Updated pubspec.yaml file to include dependencies relevant to Firebase.
+   Major difficulties encountered and many headaches self-inflicted in doing this.
+   The commands and properties for certain Firebase objects such as FirebaseUser
+   are either unavailable or deprecated for different versions of firebase_core
+   and firebase_auth specified in the pubspec.yaml file.
+   e.g. Firestore.instance.collection() does not work for newer versions of
+        firestore! Instead, the object is actually a FirebaseFirestore object (
+        not a Firestore object) which has an update() method rather than the
+        Firestore's setData() method.
+
+ - Also having difficulty understand the Provider class necessary for user login
+   Streams are not a concept I'm very familiar with at all
+ - Not a very productive week for me at all encountering setback after setback

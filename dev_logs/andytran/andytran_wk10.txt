@@ -1,0 +1,10 @@
+Team   : Ogre Fanclub
+Project: ICUE CARDS
+Name   : Andy Tran (101124547)
+
+                              WEEKLY DEV LOG 10
+                       November 22 - November 28, 2020
+      ------------------------------------------------------------------
+
+ - Oral exam on Tuesday, November 24th, 2020
+ - Took a well earned respite and did not work on the app at all this week :)

@@ -1,0 +1,27 @@
+Team   : Ogre Fanclub
+Project: ICUE CARDS
+Name   : Andy Tran (101124547)
+
+                              WEEKLY DEV LOG 2
+                      September 27 - October 3, 2020
+      ------------------------------------------------------------------
+
+ - Watched Guillaume's gitHub tutorial
+ - Unanimous decision to go ahead and use Flutter as our mobile framework
+ - Practiced the basics of Dart (statically typed language, has variables, lists
+   functions, classes, and objects)
+ - Made all the necessary downloads (took me almost an entire day! :O )
+     - Flutter
+     - Android Studio
+     - XCode
+     - VSCode
+
+ - During the weekly meeting, did a roundtable of what everyone accomplished
+   over the week
+ - Ran diagnostic tests on each team member's (flutter doctor -v)
+ - Gave a quick lesson about the basics of Dart to the team over Zoom by
+   sharing my screen
+ - Two team members were not ready and did not have Flutter installed on
+   their machines
+ - Agenda for next week: Assess who is comfortable working on which components
+   of the app and delegate portions of the workload to team members accordingly

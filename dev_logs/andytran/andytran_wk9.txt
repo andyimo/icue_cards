@@ -1,0 +1,36 @@
+Team   : Ogre Fanclub
+Project: ICUE CARDS
+Name   : Andy Tran (101124547)
+
+                              WEEKLY DEV LOG 9
+                       November 15 - November 21, 2020
+      ------------------------------------------------------------------
+
+ - A large amount of my time this week has been spent working on the
+   Deliverable 3 report
+ - Had to catch up and watch the lectures to even begin understanding
+   Architectural Styles and System Design Patterns (at least 6 hrs)
+ - Found a fantastic resource explaining the Design Patterns in great detail
+   which helpful examples: https://refactoring.guru/
+ - Performed architectural recovery in an attempt to see which Design Patterns
+   or architectural styles best fit what we currently had
+      - The Student class I created which takes in a FirebaseUser.uid as a parameter
+        is an example of the Facade Design Pattern
+      - Suggested to the team that we could possibly make a super class called
+        Game that the two games Kahoot! and HeadsUp! can inherit from since they
+        share similar properties such as requiring a deck to play with, keeping
+        a score, and showing one cue card after the next.
+      - David suggested also making a summary/result class for this game superclass
+      - This would be polymorphism/inheritance akin to what we find in the
+        Factory Design Pattern (had to look that up in refactoring-guru website)
+      - Designed the UML Class Diagram to incorporate into the report
+  - Interviewed each team member about challenges they faced during the
+    development of their specific components of the application, what they still
+    have left to do, and anything they felt might have changed since we began. Asked
+    each member to send over a small paragraph with what they've accomplished so far.
+
+  - UPDATE: The deadline for the report has been extended to Monday at noon!
+            Asked Henry to proof read, and Suki and David to write up their reasoning
+            for 'choosing' the Factory method design pattern for their portion of
+            the application. 
+  - n.b. did not have time to work on a form of local storage or firebase storage

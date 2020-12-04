@@ -1,0 +1,20 @@
+Team   : Ogre Fanclub
+Project: ICUE CARDS
+Name   : Andy Tran (101124547)
+
+                              WEEKLY DEV LOG 8
+                       November 8 - November 14, 2020
+      ------------------------------------------------------------------
+
+ - Fully merged copy of the code committed to GitHub at last.
+ - As my part is pretty much complete aside from some UI improvements, focused
+   time on reviewing the lectures and make cue cards to incorporate into our
+   mobile application.
+ - Created sample cue cards for lecture 3 Requirements Engineering
+                                lecture 4 Use Cases
+                                lecture 5 User Stories
+                                lecture 6 Domain Models
+
+ - UPDATE: Will be implementing a form of local storage (as suggested by Henry)
+           as well as making firebase capable to storing user data (probably
+           will store a directory of cue cards)
