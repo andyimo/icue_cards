@@ -40,14 +40,55 @@ class _MainDirectoryState extends State<MainDirectory> {
     Deck deck = Deck("Development Processes");
     Deck deck2 = Deck("Chapter 2");
     Deck deck3 = Deck("Chapeter 3");
-    Deck deck4 = Deck("Chapter 4");
-    Deck deck5 = Deck("Intro to Design Patterns");
+    Deck deck4 = Deck("Software Architecture");
+    Deck deck5 = Deck("Design Patterns");
 
     folder.addDeck(deck);
     folder.addDeck(deck2);
     folder.addDeck(deck3);
     folder.addDeck(deck4);
     folder.addDeck(deck5);
+
+    deck3.addCard(new iCueCard(
+        frontSide: 'Software Architecture',
+        backSide:
+            'Set of principle design decisions governing a software system (structure, behaviour, interaction, non-functional properties)'));
+    deck3.addCard(new iCueCard(
+        frontSide: 'Prescriptive Architecture',
+        backSide:
+            'Dictates how the system will be build a priori (as-conceived/as-intended)'));
+    deck3.addCard(new iCueCard(
+        frontSide: 'Descriptive Architecture',
+        backSide:
+            'Describes how the system has actually been built (as-implemented/as-realized)'));
+    deck3.addCard(new iCueCard(
+        frontSide: 'Architectural Degradation',
+        backSide:
+            'Adding new design decisions to an architecture that deviate from the Prescriptive Architecture. e.g. Architectural Drift and Architectural Erosion'));
+    deck3.addCard(new iCueCard(
+        frontSide: 'Architecutral Drift',
+        backSide:
+            'The addition of new design decisions that aren\'t part of the Prescriptive Architecture but does not violate the overall design decisions'));
+    deck3.addCard(new iCueCard(
+        frontSide: 'Architectural Erosion',
+        backSide:
+            'Incorporation of design decisions that VIOLATE the Prescriptive Architecture.'));
+    deck3.addCard(new iCueCard(
+        frontSide: 'Architectural Recovery',
+        backSide:
+            'The act of reviewing the entire codebase to determine a software system\'s architecture.'));
+    deck3.addCard(new iCueCard(
+        frontSide: 'Components',
+        backSide:
+            'Architectural entity that encapsulates a subset of the system functionality, restricts access via explicit interface, has explicit environmental dependencies'));
+    deck3.addCard(new iCueCard(
+        frontSide: 'Connectors',
+        backSide:
+            'Architectural entity tasked with effecting and regulating interactions among components (e.g. procedure calls or shared data access)'));
+    deck3.addCard(new iCueCard(
+        frontSide: 'Configuration',
+        backSide:
+            'aka. Topology\nSet of specific associations between components and connectors.'));
 
     deck5.addCard(new iCueCard(
         frontSide: 'Design Pattern',
