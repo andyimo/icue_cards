@@ -38,13 +38,11 @@ class _MainDirectoryState extends State<MainDirectory> {
     folders.add(folder4);
 
     Deck deck = Deck("Development Processes");
-    Deck deck2 = Deck("Chapter 2");
     Deck deck3 = Deck("Software Architecture");
     Deck deck4 = Deck("Architectural Styles");
     Deck deck5 = Deck("Design Patterns");
 
     folder.addDeck(deck);
-    folder.addDeck(deck2);
     folder.addDeck(deck3);
     folder.addDeck(deck4);
     folder.addDeck(deck5);
@@ -223,11 +221,6 @@ class _MainDirectoryState extends State<MainDirectory> {
         frontSide: 'Decorator',
         backSide:
             'Structural Design Pattern.\nLets you attach new behaviours to objects by replacing these objects inside special wrapper objects that contain the behaviours. e.g. Assign extra behaviours to objects at runtime without breaking the code that uses these objects.'));
-
-    deck2.addCard(new iCueCard(
-        frontSide: 'chapter 2 sample question',
-        backSide: 'chapter 2 sample answer',
-        color: Colors.green));
 
     deck.addCard(new iCueCard(
         frontSide: 'Software Engineering Process',
