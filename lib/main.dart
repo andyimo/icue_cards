@@ -15,8 +15,7 @@ import './views/BottomNavigationWidget.dart';
 
 void main() {
   runApp(GetMaterialApp(
-    initialRoute:
-        '/home', //in this line, change '/home' to '/' to test the login
+    initialRoute: '/', //in this line, change '/home' to '/' to test the login
     routes: {
       '/': (context) => Login(),
       '/home': (context) => Home(),

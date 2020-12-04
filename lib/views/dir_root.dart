@@ -8,7 +8,7 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:get/get.dart';
 import './search.dart';
 import 'package:reorderables/reorderables.dart';
-import 'dir_folder.dart';
+import './dir_folder.dart';
 import './card_list.dart';
 
 class MainDirectory extends StatefulWidget {
