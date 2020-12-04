@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-tl\\values-tl.xml",
+            "outputFile": "/Users/h.t./Desktop/ALL/3004/~$Project/TOGETHER/icue_cards/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-tl/values-tl.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\andii\\.gradle\\caches\\transforms-2\\files-2.1\\3aaf6e5219b7f981ec263df919098c6f\\core-1.1.0\\res\\values-tl\\values-tl.xml",
+                    "source": "/Users/h.t./.gradle/caches/transforms-2/files-2.1/3aaf6e5219b7f981ec263df919098c6f/core-1.1.0/res/values-tl/values-tl.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\andii\\.gradle\\caches\\transforms-2\\files-2.1\\6e2804c1656010bb7379c067ebf6dcff\\jetified-play-services-basement-17.0.0\\res\\values-tl\\values.xml",
+                    "source": "/Users/h.t./.gradle/caches/transforms-2/files-2.1/2bf7237c269ed87392cba0845af1b859/jetified-play-services-basement-17.0.0/res/values-tl/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\andii\\.gradle\\caches\\transforms-2\\files-2.1\\6eb14f512292913515d869914807ad40\\play-services-base-17.1.0\\res\\values-tl\\values.xml",
+                    "source": "/Users/h.t./.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/res/values-tl/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

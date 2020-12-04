@@ -1,0 +1,11 @@
+framework module multi_select_item {
+  umbrella header "multi_select_item-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module multi_select_item.Swift {
+    header "multi_select_item-Swift.h"
+    requires objc
+}

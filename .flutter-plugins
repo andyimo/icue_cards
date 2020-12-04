@@ -1,12 +1,12 @@
 # This is a generated file; do not edit or check into version control.
-audioplayers=C:\\Users\\andii\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\audioplayers-0.17.0\\
-firebase_auth=C:\\Users\\andii\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_auth-0.18.3+1\\
-firebase_auth_web=C:\\Users\\andii\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_auth_web-0.3.2+1\\
-firebase_core=C:\\Users\\andii\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_core-0.5.2+1\\
-firebase_core_web=C:\\Users\\andii\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_core_web-0.2.1+1\\
-multi_select_item=C:\\Users\\andii\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\multi_select_item-1.0.3\\
-orientation=C:\\Users\\andii\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\orientation-1.2.0\\
-path_provider=C:\\Users\\andii\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\path_provider-1.6.24\\
-path_provider_linux=C:\\Users\\andii\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\path_provider_linux-0.0.1+2\\
-path_provider_macos=C:\\Users\\andii\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\path_provider_macos-0.0.4+6\\
-path_provider_windows=C:\\Users\\andii\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\path_provider_windows-0.0.4+3\\
+audioplayers=/Users/h.t./Developer/flutter/.pub-cache/hosted/pub.flutter-io.cn/audioplayers-0.17.0/
+firebase_auth=/Users/h.t./Developer/flutter/.pub-cache/hosted/pub.flutter-io.cn/firebase_auth-0.18.4/
+firebase_auth_web=/Users/h.t./Developer/flutter/.pub-cache/hosted/pub.flutter-io.cn/firebase_auth_web-0.3.2+2/
+firebase_core=/Users/h.t./Developer/flutter/.pub-cache/hosted/pub.flutter-io.cn/firebase_core-0.5.3/
+firebase_core_web=/Users/h.t./Developer/flutter/.pub-cache/hosted/pub.flutter-io.cn/firebase_core_web-0.2.1+1/
+multi_select_item=/Users/h.t./Developer/flutter/.pub-cache/hosted/pub.flutter-io.cn/multi_select_item-1.0.3/
+orientation=/Users/h.t./Developer/flutter/.pub-cache/hosted/pub.flutter-io.cn/orientation-1.2.0/
+path_provider=/Users/h.t./Developer/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider-1.6.24/
+path_provider_linux=/Users/h.t./Developer/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider_linux-0.0.1+2/
+path_provider_macos=/Users/h.t./Developer/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider_macos-0.0.4+6/
+path_provider_windows=/Users/h.t./Developer/flutter/.pub-cache/hosted/pub.flutter-io.cn/path_provider_windows-0.0.4+3/
