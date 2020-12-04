@@ -1,0 +1,34 @@
+Team   : Ogre Fanclub
+Project: ICUE CARDS
+Name   : Andy Tran (101124547)
+
+                              WEEKLY DEV LOG 6
+                       October 25 - October 31, 2020
+      ------------------------------------------------------------------
+
+ - Pleased to report that I finally have a fully functional login, logout,
+   and registration system à la Firebase
+ - Able to toggle between the registration and login pages via a flatButton in the
+   top right corner
+ - When registering, users are expected to enter in passwords that are at least
+   6 characters long; the app will refuse input that is not of an appropriate length
+ - Passwords are obscured as the user types them in
+ - Having some difficulty making sure the user enters a valid email address.
+ - The program will get stuck/crash if the user enters in an invalid one.
+   In the meantime, a 'ghetto' regular expression has been included to try to
+   check against the email the user types before it gets sent off to Firebase to
+   be authenticated. Will be improved next week (hopefully).
+
+ - During this weeks team meeting, I learned that the team has not been using
+   the gitHub repository to commit their work.
+ - The other team members are not able to access Firebase even though it runs
+   smoothly on my machine. Possibly having something to do with the fact that
+   they're in China???
+ - Spent the bulk of the reading week, along with Henry, attempting to merge
+   everyone's code together and making sure it runs on my machine
+ - Problem: the Provider stream I've set up seems to conflict with navigation
+            between the other pages of the app. I'm unable to log out of the
+            application any more.
+            Will have to see how to make the routes Henry has set up work
+            alongside the Provider stream that dictates whether a user should
+            be logged in or out.

@@ -1,0 +1,33 @@
+Team   : Ogre Fanclub
+Project: ICUE CARDS
+Name   : Andy Tran (101124547)
+
+                              WEEKLY DEV LOG 3
+                        October 4 - October 10, 2020
+      ------------------------------------------------------------------
+
+ - Started to follow YouTube tutorials on how to program in Flutter.
+ - https://www.youtube.com/watch?v=x0uinJvhNxI&ab_channel=Academind
+ - https://www.youtube.com/watch?v=1ukSR1GRtMU&ab_channel=TheNetNinja
+ - Began practicing by following along with TheNetNinja's tutorials in which
+   he demonstrates how to code a simple application that shows timezones for
+   different cities around the world
+ - Very apprehensive about working with Widgets (complicated data structures)
+ - Emulator takes almost an hour to load on my computer and Android Studio can
+   take upwards to half an hour to finally boot up. My computer also becomes
+   insanely slow while the Emulator or Android Studio are running making it
+   impossible to do much else.
+ - Might need to think about buying a new PC :T
+
+ - Hosted this week's meeting over Discord rather than over Zoom (a team
+   member was having audio and connection issues over Zoom)
+ - Delegated tasks to other team members:
+     me     -> Login and home page *
+     Henry  -> Cue cards
+     David  -> Heads Up!
+     Suki   -> Kahoot!
+
+ * Admittedly a small portion of the application.
+   I'm happy because my computer is very slow anyways.
+   Agreed to take charge of class presentations and writing the reports
+   for any deliverables to compensate for lack of coding.

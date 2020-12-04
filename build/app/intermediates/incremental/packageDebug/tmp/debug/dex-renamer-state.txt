@@ -1,4 +1,4 @@
-#Thu Dec 03 16:53:08 EST 2020
+#Thu Dec 03 20:29:37 EST 2020
 base.2=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes2.dex
 base.1=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
 base.0=C\:\\Users\\andii\\Developper\\icue_cards\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex

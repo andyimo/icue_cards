@@ -1,0 +1,34 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Andy Tran (101124547)
+
+                              WEEKLY DEV LOG 1
+                           September 20 - 26, 2020
+      ------------------------------------------------------------------
+
+  ------------------------------------------------------------------
+ | DELIVERABLE 1 (Monday, September 21, 2020)                       |
+  ------------------------------------------------------------------
+ | Created the PowerPoint presentation and made helpful graphics    |
+ | to convey how Kahoot! and Heads Up! are played using our app.    |
+ | Wrote and submitted the Project Proposal for the team.           |
+  ------------------------------------------------------------------
+
+ - Created a sample cue card deck for Lecture 2 Development Processes
+ - Halfway done creating cue cards for Lecture 3 Requirements Engineering
+ - Conducted research on mobile frameworks to develop ICUE CARDS on prior to
+   today's team meeting.
+   https://www.youtube.com/watch?v=4m7msadL5iA&ab_channel=MicrosoftforStartups
+   https://www.youtube.com/watch?v=l-YO9CmaSUM&ab_channel=GoogleDevelopers
+ - Prepared an agenda for today's team meeting (10AM - 11AM):
+    1. Team reflection on the proposals presented Monday, September, 21, 2020.
+       Discussed the ideas we were most impressed with and what we could learn
+       from them. Took a bit of time to talk about how we believe our
+       presentation went and where we could improve for the next one.
+    2. Motioned to make ICUE CARDS available on both iOS and Android. Our app
+       should be created so that all of our fellow classmates, whether they be
+       an Android or iOS user, should have access to it.
+    3. Introduced Flutter to the team: a mobile UI framework for creating native
+       apps for iOS and Android. Also introduced Firebase. These suggestions
+       were met with some pushback from the team as some were hesitant about
+       learning a new language (Dart).

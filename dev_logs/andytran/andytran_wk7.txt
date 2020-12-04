@@ -1,0 +1,24 @@
+Team   : Ogre Fanclub
+Project: ICUE CARDS
+Name   : Andy Tran (101124547)
+
+                              WEEKLY DEV LOG 7
+                       November 1 - November 7, 2020
+      ------------------------------------------------------------------
+
+ - Devoted this week to preparing for Deliverable 2 and doing last minute
+   merging of our code.
+ - Interviewed each team member to check in on the state of their individual
+   parts of the app, what they still have left to do (to get a sense of what
+   to write for the report):
+    - Henry: Two ways to view a student's cue cards (list and deck view)
+             Can edit cards, add cards, rearrange cards, delete cards, and
+             change their colours.
+    - David: A home page with dropdown lists that specify a cue card deck to
+             play with, another dropdown with the number of cards to play with,
+             a summary page with the score and a list of incorrect responses
+             Tilting still not implemented.
+    - Suki : Same as David
+  - Wrote the D2 report.
+  - Designing the client-server component diagram took almost 3 hours to learn
+    how to do on visual-paradigm

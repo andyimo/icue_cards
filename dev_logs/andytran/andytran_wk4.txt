@@ -1,0 +1,24 @@
+Team   : Ogre Fanclub
+Project: ICUE CARDS
+Name   : Andy Tran (101124547)
+
+                              WEEKLY DEV LOG 4
+                       October 11 - October 17, 2020
+      ------------------------------------------------------------------
+
+ - Began conducting research on how to implement a login system in a Flutter
+   application (https://pusher.com/tutorials/login-ui-flutter)
+
+ - Learned about Firebase (potentially can use as a backend for our application),
+   Shared Preferences (acts like a bookmark for our app)
+ - Pitched Firebase to members of the team. One member was reluctant and hesitant
+   about the use of this service as our backend.
+     - Decided on hosting another meeting on Saturday to allow her and other
+       team members some time to research which backend they would like to use
+     - If no suggestions or alternatives are brought forward, Firebase will be
+       our backend of choice.
+
+  - UPDATE: No one researched any other alternatives so Firebase it is!
+  - Found another very useful tutorial online (TheNetNinja)
+  - Still very annoyed with how unusable my PC is (Late-2013 iMac) whenever
+    I try to load Android Studio or run a phone emulator
