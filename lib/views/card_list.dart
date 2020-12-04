@@ -15,6 +15,7 @@ class Lists extends StatefulWidget {
 }
 
 class _ListState extends State<Lists> {
+  String curSelection = "Date";
   MultiSelectController controller = new MultiSelectController();
   Deck deck;
   _ListState(Deck deck) {
@@ -99,9 +100,11 @@ class _ListState extends State<Lists> {
         setState(() {
           print(result);
           deck.addCard(iCueCard(
-              frontSide: result['frontside'],
-              backSide: result['backside'],
-              color: result['color']));
+            frontSide: result['frontside'],
+            backSide: result['backside'],
+            color: result['color'],
+            image: result['image'] == null ? null : result['image'],
+          ));
           Get.snackbar(result['frontside'], 'Added');
         });
       }
@@ -116,6 +119,7 @@ class _ListState extends State<Lists> {
           item.setFront(result['frontside']);
           item.setBack(result['backside']);
           item.setColor(result['color']);
+          item.setImage(result['image'] == null ? null : result['image']);
           Get.snackbar(result['frontside'], 'Edited');
         });
       }
@@ -150,6 +154,7 @@ class _ListState extends State<Lists> {
                   ),
                 ]
               : [
+                  dropdownWidget(deck),
                   IconButton(
                     icon: Icon(Icons.grading),
                     onPressed: () {
@@ -167,7 +172,7 @@ class _ListState extends State<Lists> {
                       Navigator.pushNamed(context, "/cardView",
                           arguments: {"list": deck.getCards(), "title": title});
                     },
-                  )
+                  ),
                 ],
           backgroundColor: Colors.blue[700],
         ),
@@ -185,7 +190,7 @@ class _ListState extends State<Lists> {
                     dismissThresholds: <SlideActionType, double>{
                       SlideActionType.primary: 1.0
                     },
-                    //child: SlidableDrawerDismissal(),
+                    child: SlidableDrawerDismissal(),
                     onDismissed: (actionType) {
                       setState(() {
                         deck
@@ -229,6 +234,41 @@ class _ListState extends State<Lists> {
             dragElevation: 8.0,
           ),
         ));
+  }
+
+  Widget dropdownWidget(Deck deck) {
+    final List<String> _dropdownValues = [
+      "Name",
+      "Date",
+    ]; //The li
+    return DropdownButton(
+      dropdownColor: Colors.blue[700],
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 15,
+      ),
+      value: curSelection,
+      items: _dropdownValues
+          .map((value) => DropdownMenuItem(
+                child: Text(value),
+                value: value,
+              ))
+          .toList(),
+      onChanged: (String value) {
+        //once dropdown changes, update the state of out currentValue
+        setState(() {
+          curSelection = value;
+          if (value == "Date") {
+            deck.sortByTime();
+          } else {
+            deck.sortByName();
+          }
+        });
+      },
+      //this wont make dropdown expanded and fill the horizontal space
+      isExpanded: false,
+      //make default value of dropdown the first value of our list
+    );
   }
 
   Widget listContainer(String front, String back, Color cardColor, int index) {

@@ -38,6 +38,10 @@ dependencies:
   reorderables: ^0.3.2
   audioplayers: ^0.17.0
   flutter_screenutil: ^3.2.0
+  smart_select: ^4.3.2
+  image_picker: ^0.6.7+14
+  video_player: ^1.0.1
+  photo_view: ^0.10.3
 
 
 

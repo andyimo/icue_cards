@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import '../models/iCueCard.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter_tindercard/flutter_tindercard.dart';
-//import '../tools/shuffle.dart';
 import 'dart:async';
+import 'package:photo_view/photo_view.dart';
+import '../tools/shuffle.dart';
 
 class CardView extends StatefulWidget {
   @override
@@ -31,15 +32,21 @@ class _CardViewState extends State<CardView> {
     _streamController.add(cards);
   }
 
-  void _refreshStream(List<iCueCard> oldCards, List<iCueCard> cards) {
-    print(oldCards);
-    print(cards);
+  void _refreshStream(
+      List<iCueCard> oldCards, List<iCueCard> cards, bool random) {
+    if (random == true) {
+      shuffle(cards);
+      _streamController.add(cards);
+      return;
+    }
     for (int i = cards.length - 1; i >= 0; i--) {
       cards.removeAt(i);
     }
+
     for (int i = 0; i < oldCards.length; i++) {
       cards.add(oldCards[i]);
     }
+
     _streamController.add(cards);
   }
 
@@ -85,8 +92,8 @@ class _CardViewState extends State<CardView> {
       alignment: Alignment.center,
       children: [
         Container(
-          key: UniqueKey(),
-          color: Colors.grey[200],
+          //entire page
+          color: Colors.grey[300],
           child: TinderSwapCard(
             swipeUp: true,
             swipeDown: true,
@@ -98,13 +105,14 @@ class _CardViewState extends State<CardView> {
             maxHeight: MediaQuery.of(context).size.height * 0.8,
             minWidth: MediaQuery.of(context).size.width * 0.85,
             minHeight: MediaQuery.of(context).size.height * 0.785,
-            cardBuilder: (context, index) => Padding(
-              padding: const EdgeInsets.all(8.0),
+            cardBuilder: (context, index) => Container(
               child: FlipCard(
-                key: UniqueKey(),
+                //the card
+                key: ObjectKey(cards[index]),
                 direction: FlipDirection.HORIZONTAL,
                 speed: 1000,
                 front: Container(
+                  //the card
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
@@ -156,16 +164,42 @@ class _CardViewState extends State<CardView> {
                       ),
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Center(
-                        child: Text(
-                          cards[index].getBack(),
-                          style:
-                              TextStyle(color: Colors.grey[800], fontSize: 25),
-                          textAlign: TextAlign.center,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            //"dadadji d jaojd iod osd ossoo js f josdcosdfosj f;osf  dfsfj ofos fj sofj osf ofjd isij si; f jd jsf sdof jdsjjf dfj osf ofjd isij si; f jd jsf sdof jdsjjf dfj osf ofjd isij si; f jd jsf sdof jdsjjf dfj osf ofjd isij si; f jd jsf sdof jdsjjf dfj osf ofjd isij si; f jd jsf sdof jdsjjf dfj osf ofjd isij si; f jd jsf sdof jdsjjf dfj osf ofjd isij si; f jd jsf sdof jdsjjf dfj osf ofjd isij si; f jd jsf sdof jdsjjf dfj aisjfisdfjsdf sdf  fj oisdj osf ;osfj osfj ;sdfj oi;afj ;j fis j;osfj ;sa dsiafjio;sfj ;sc; josdj as jios jisofj isfa;sjf osjf s jf;idsf jsaifj;fdjso s;df jsf sf jsfj ;lsf ;ds sf idfjsifj sdfj ldf lksf msdf lsfd ;asf ;ios f; j",
+                            //"dsadjajdo, dksdm; md ,s;f,ds sofkosi jdfkdsiofjos f sfijsiodfjisoj sodj fsdoiff sidjf iosdjf oj;s, dsadjajdo, dksdm; md ,s;f,ds sofkosi jdfkdsiofjos f sfijsiodfjisoj sodj fsdoiff sidjf iosdjf oj;sdsadjajdo, dksdm; md ,s;f,ds sofkosi jdfkdsiofjos f sfijsiodfjisoj sodj fsdoiff sidjf iosdjf oj;sdsadjajdo, dksdm; md ,s;f,ds sofkosi jdfkdsiofjos f sfijsiodfjisoj sodj fsdoiff sidjf iosdjf oj;s",
+                            cards[index].getBack(),
+                            style: TextStyle(
+                                color: Colors.grey[800], fontSize: 25),
+                            textAlign: TextAlign.center,
+                          ),
                         ),
-                      ),
+                        cards[index].getImage() == null
+                            ? Container()
+                            : Expanded(
+                                //   child: PhotoView(
+                                //   imageProvider: AssetImage('assets/long.png'),
+                                // )
+                                child: GestureDetector(
+                                  onDoubleTap: () async {
+                                    await showDialog(
+                                        context: context,
+                                        builder: (_) => ImageDialog(
+                                            cards[index].getImage()));
+                                    //AssetImage('assets/long.png')));
+                                  },
+                                  child: Image(
+                                    //image: AssetImage('assets/long.png'),
+                                    image: cards[index].getImage(),
+                                    fit: BoxFit.scaleDown,
+                                  ),
+                                ),
+                              ),
+                      ],
                     )),
               ),
             ),
@@ -194,14 +228,42 @@ class _CardViewState extends State<CardView> {
         ),
         Align(
           alignment: Alignment.bottomCenter,
-          child: IconButton(
-              iconSize: 30,
-              icon: Icon(Icons.replay),
-              onPressed: () {
-                _refreshStream(oldCards, cards);
-              }),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                  iconSize: 30,
+                  icon: Icon(Icons.replay),
+                  onPressed: () {
+                    _refreshStream(oldCards, cards, false);
+                  }),
+              IconButton(
+                  iconSize: 30,
+                  icon: Icon(Icons.shuffle),
+                  onPressed: () {
+                    _refreshStream(oldCards, cards, true);
+                  }),
+            ],
+          ),
         ),
       ],
     );
   }
+
+  Widget ImageDialog(AssetImage a) {
+    return Container(
+        child: PhotoView(
+      imageProvider: a,
+    ));
+  }
 }
+
+// class ImageDialog extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//         child: PhotoView(
+//       imageProvider: AssetImage("assets/long.png"),
+//     ));
+//   }
+// }

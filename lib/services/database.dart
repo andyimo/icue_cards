@@ -20,8 +20,7 @@ class DatabaseService {
 
   List<Student> _mainDirectoryFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc) {
-      return Student(
-          name: doc.data['name'], mainDirectory: doc.data['mainDirectory']);
+      return Student(name: doc.data['name'], root: doc.data['root']);
     }).toList();
   }
 

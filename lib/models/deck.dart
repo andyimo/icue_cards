@@ -2,12 +2,20 @@ import '../models/iCueCard.dart';
 
 class Deck {
   List<iCueCard> _cards;
-  String _name;
+  String _deckName;
   DateTime _time;
   String _order;
-  Deck(this._name) {
+  Deck(this._deckName) {
     _cards = new List();
     _time = DateTime.now();
+  }
+
+  void sortByTime() {
+    _cards.sort((item1, item2) => item1.getTime().compareTo(item2.getTime()));
+  }
+
+  void sortByName() {
+    _cards.sort((item1, item2) => item1.getBack().compareTo(item2.getBack()));
   }
 
   void setList(List<iCueCard> list) {
@@ -27,7 +35,7 @@ class Deck {
   }
 
   String getName() {
-    return _name;
+    return _deckName;
   }
 
   iCueCard removeCard(int index) {
@@ -37,7 +45,7 @@ class Deck {
   }
 
   void setName(String newName) {
-    _name = newName;
+    _deckName = newName;
   }
 
   DateTime getTime() {

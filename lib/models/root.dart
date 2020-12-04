@@ -20,13 +20,14 @@ class Root {
     return _folders.length;
   }
 
+  void addFolder(Folder f) {
+    _folders.add(f);
+  }
+
   Folder removeFolder(int index) {
     Folder temp = _folders[index];
     _folders.removeAt(index);
     return temp;
   }
 
-  void addFolder(Folder f) {
-    _folders.add(f);
-  }
 }

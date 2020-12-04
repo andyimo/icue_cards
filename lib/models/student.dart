@@ -1,7 +1,7 @@
-import 'package:icue_cards/views/dir_root.dart';
+import '../models/root.dart';
 
 class Student {
   final String name;
-  final MainDirectory mainDirectory;
-  Student({this.name, this.mainDirectory});
+  final Root root;
+  Student({this.name, this.root});
 }
