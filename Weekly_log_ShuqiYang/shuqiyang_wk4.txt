@@ -1,0 +1,15 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Shuqi Yang (101114181)
+
+WEEKLY LOG Week 4
+October 11 - 17, 2020
+
+-create a main page for game part, user can choose which 
+Kahoot! Game or Heads Up Game to review their icuecard
+-according to icuecard’s classification setting drop down 
+option box and setting a drop-down box where user can choose 
+the number of questions (Kahoot! Start page)
+-propose suggestions for local Storge to use MySQL and MongoDB, 
+and hope to complete the function of database as soon as possible
+
