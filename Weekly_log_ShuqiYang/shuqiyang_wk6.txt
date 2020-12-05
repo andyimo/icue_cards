@@ -1,0 +1,14 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Shuqi Yang (101114181)
+
+WEEKLY LOG Week 6
+October 25 - 31, 2020
+
+-last week was reading week, we took a break
+-create Kahoot! Game which can display the back side on 
+the top and create 4 front side buttons (Kahoot! Page)
+- according to the user’s choice, calculate the score and 
+display the score on the Kahoot result page.
+
+
