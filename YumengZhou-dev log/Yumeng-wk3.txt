@@ -1,0 +1,12 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Yumeng Zhou (101128523)
+
+Weekly Dev Log 3
+October 4 - 10, 2020
+
+-It is the start time for the project
+  As it has been mentioned before, it is a totally new language and i 
+  have never use flutter frame before, I create a like demo project on 
+  my local and do some min test under a simple demo
+- Watch the video tutorial on flutter

@@ -1,0 +1,10 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Yumeng Zhou (101128523)
+
+Weekly Dev Log 5
+October 18 - 24, 2020
+
+-Take a little rest during the reading week
+-Make some search and watch some tutorial veido for flutter
+-Make the plan for the next stage work
