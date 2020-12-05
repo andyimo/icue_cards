@@ -33,10 +33,13 @@ Name   : Andy Tran (101124547)
  - Hard coded about 7 lectures worth of material as sample cue cards (for presentation 
    purposes)
 
- - My focus will shift to improving the UI of the login, registration, and
-   home page (for the presentation) as well as hardcoding some of the
-   sample cue cards I've already made so that the application can still serve
-   as a study tool for 3004.
+ - Spent about two hours designing the login page, registration page, and home page 
+   UI in Figma.
+ - Drew inspiration from UI designs posted on www.behance.net and dribble.com  
+ - www.fontawesome.com has some universally useful symbols 
+ - undraw.co has free illustrations that look great! 
+ - I've included the fruit of 2 hours of ui design labour in this directory.
+ - ??? hours I have sacrificed to bring this UI design into the app
 
  - To do: Write the final report for Deliverable 4
           Learn to get the app up and running on my physical device (iPhone)
