@@ -1,0 +1,15 @@
+Team    Ogre Fanclub 
+Project ICUE CARDS
+Name    Yumeng Zhou (101128523)
+
+Weekly Dev Log 10
+November 22 - 28, 2020
+
+-parepare for the oral presentation
+-for my individual part, as I spent a lot of time on my little local branch, after the latest merge, i found that my dart sdk version
+is too low to handle my team members' work, so i make an upgrade of sdk version, take some time.
+-checking with Henry about the root of the project, as i do the hardcode for the drop down list iteam. Also, i found that instead 
+of choosing the deck directly, i need to read from the folder first, and i can no longer use my original way to pass the parameter as
+the root is not look like what i thinking before, make a lot of change of that.
+-For testing purpose, i hardcode some root, folder and deck objects, and make sure that can be loaded dynamiclly into the drop down list, 
+also the value in the drop down can be properly get and sent to the next page.
