@@ -19,20 +19,31 @@ class Home extends StatelessWidget {
     return StreamProvider<List<Student>>.value(
       value: DatabaseService().userStream,
       child: Scaffold(
-          backgroundColor: Colors.brown[50],
+          backgroundColor: Color(0xff3e85ee),
           appBar: AppBar(
             title: Text('ICUE CARDS'),
-            backgroundColor: Colors.brown[400],
+            backgroundColor: Color(0xff3e85ee),
             elevation: 0.0,
             actions: <Widget>[
               // logout icon
+              /*
               FlatButton.icon(
                 icon: Icon(Icons.person),
                 label: Text('logout'),
                 onPressed: () async {
                   await _auth.signOut();
                 },
-              )
+              )*/
+              NiceButton(
+                width: 120,
+                elevation: 8.0,
+                radius: 52.0,
+                text: "Sign out",
+                background: Colors.red,
+                onPressed: () async {
+                  await _auth.signOut();
+                },
+              ),
             ],
           ),
           body: Center(
@@ -40,30 +51,23 @@ class Home extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(30.0),
-                  child: NiceButton(
-                    width: 180,
-                    elevation: 8.0,
-                    radius: 52.0,
-                    text: "Cards",
-                    background: Colors.brown,
+                  child: FlatButton(
+                    padding: EdgeInsets.all(0.0),
+                    child: Image.asset('assets/study_button.png'),
                     onPressed: () {
                       Navigator.pushNamed(context, '/mainDirectory');
                     },
                   ),
                 ),
-                NiceButton(
-                  width: 180,
-                  elevation: 8.0,
-                  radius: 52.0,
-                  text: "Game",
-                  background: Colors.brown,
-                  onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => Kahoot()),
-                    // );
-                    Navigator.pushNamed(context, '/kahoot');
-                  },
+                Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: FlatButton(
+                    padding: EdgeInsets.all(0.0),
+                    child: Image.asset('assets/game_button.png'),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/kahoot');
+                    },
+                  ),
                 ),
               ],
             ),
