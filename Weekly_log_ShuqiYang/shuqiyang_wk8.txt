@@ -1,0 +1,13 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Shuqi Yang (101114181)
+
+WEEKLY LOG Week 8
+November 8 - 14, 2020
+
+-set each mistake icuecard to separate display opportunity 
+and user can click button to review the icuecard with answered 
+incorrectly
+-optimize the UI of the page, make the program more beautiful
+
+
