@@ -1,0 +1,19 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Shuqi Yang (101114181)
+
+WEEKLY LOG Week 1
+September 27 - October 3, 2020
+
+-final decision to use dart & flutter framework to development 
+application which can both works on iOS and Android device
+-basic software download and set environment variable 
+ -Flutter
+ -Android studio
+ -VSCode
+-study the application content and assign it according to the content, 
+chose the main page of game part and all Kahoot! Game part.
+-learn dart & flutter on next week
+
+
+
