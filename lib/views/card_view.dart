@@ -1,3 +1,8 @@
+/* The 3D card view screen
+   [List all the cards in a deck]
+   Author: Henry Tu
+*/
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../models/iCueCard.dart';

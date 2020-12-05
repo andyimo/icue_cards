@@ -12,7 +12,6 @@ import 'package:get/get.dart';
 import 'package:icue_cards/views/dir_root.dart';
 import 'package:icue_cards/views/game_home_page.dart';
 import 'package:icue_cards/views/dir_folder.dart';
-//import './views/BottomNavigationWidget.dart';
 
 void main() {
   runApp(GetMaterialApp(

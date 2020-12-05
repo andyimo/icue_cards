@@ -152,7 +152,6 @@ class _NewCardState extends State<NewCard> {
                           context: context,
                           builder: (_) => ImageDialog(_assetImage));
                     }
-                    ;
                   },
                   onDoubleTap: () {
                     setState(() {
