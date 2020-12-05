@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:icue_cards/screens/home/home.dart';
+import 'package:icue_cards/views/game.dart';
 import 'package:provider/provider.dart';
 import 'services/auth.dart';
 import 'screens/wrapper.dart';
@@ -25,7 +26,8 @@ void main() {
       '/mainDirectory': (context) => MainDirectory(),
       '/decks': (context) => DirectoryDeck(),
       '/games': (context) => MyHomePage(),
-      '/kahoot': (context) => BottomNavigationWidget(),
+      '/kahoot': (context) => GamePage(),
+      //'/kahoot': (context) => BottomNavigationWidget(),
     },
   ));
 }
