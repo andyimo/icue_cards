@@ -1,25 +1,37 @@
+/* The card list screen
+   [List all the cards in a deck]
+   Author: Henry Tu
+*/
 import 'package:flutter/material.dart';
 import '../models/iCueCard.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_list_drag_and_drop/drag_and_drop_list.dart';
 import 'package:get/get.dart';
 import '../models/deck.dart';
+import '../models/folder.dart';
+import '../models/root.dart';
 import 'package:multi_select_item/multi_select_item.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:nice_button/nice_button.dart';
 
 class Lists extends StatefulWidget {
   final Deck deck;
-  Lists({this.deck});
+  final Root root;
+  Lists({this.deck, this.root});
   @override
-  _ListState createState() => _ListState(this.deck);
+  _ListState createState() => _ListState(this.deck, this.root);
 }
 
 class _ListState extends State<Lists> {
   String curSelection = "Date";
   MultiSelectController controller = new MultiSelectController();
   Deck deck;
-  _ListState(Deck deck) {
+  Root root;
+  String title;
+  _ListState(Deck deck, Root root) {
     this.deck = deck;
+    this.root = root;
+    this.title = deck.getName();
   }
   @override
   void initState() {
@@ -33,46 +45,30 @@ class _ListState extends State<Lists> {
     });
   }
 
-  void delete() {
-    if (controller.selectedIndexes.length == 0) {
-      Get.snackbar("Select something to delete.", "or not.");
+  void delete(List indexes) {
+    if (indexes.length == 0) {
+      Get.snackbar("Select something", "or not.");
       return;
     }
-    Alert(
-      context: context,
-      type: AlertType.warning,
-      title: "Are You Sure?",
-      desc: "Delete Selected Cards",
-      buttons: [
-        DialogButton(
-            child: Text(
-              "Maybe Not",
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-            onPressed: () => Navigator.pop(context),
-            color: Colors.purple[900]),
-        DialogButton(
-          child: Text(
-            "Sure!",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-            var list = controller.selectedIndexes;
-            list.sort((b, a) =>
-                a.compareTo(b)); //reoder from biggest number, so it wont error
-            list.forEach((element) {
-              deck.removeCard(element);
-            });
+    setState(() {
+      var list = indexes;
+      list.sort((b, a) =>
+          a.compareTo(b)); //reoder from biggest number, so it wont error
+      list.forEach((element) {
+        deck.removeCard(element);
+      });
+    });
+  }
 
-            setState(() {
-              controller.set(deck.getLength());
-            });
-          },
-          color: Colors.red[800],
-        )
-      ],
-    ).show();
+  void addToRecentlyDeleted(List indexes) {
+    if (title == "Recently Deleted") {
+      return;
+    }
+    indexes.forEach((element) {
+      if (title != "Recently Deleted") {
+        root.addDeleted(deck.getCards()[element]);
+      }
+    });
   }
 
   void combine() {
@@ -91,11 +87,9 @@ class _ListState extends State<Lists> {
 
   @override
   Widget build(BuildContext context) {
-    final title = deck.getName();
     void newCard() async {
       dynamic result = await Navigator.pushNamed(context, '/newCard');
       if (result != null) {
-        newCard();
         print(result);
         setState(() {
           print(result);
@@ -127,14 +121,27 @@ class _ListState extends State<Lists> {
 
     return Scaffold(
         // the main view
-        floatingActionButton: (title == "Combined")
-            ? null
-            : FloatingActionButton(
-                backgroundColor: Colors.blue[700],
-                child: Icon(Icons.add),
+        floatingActionButton: controller.isSelecting == true
+            ? FloatingActionButton(
+                backgroundColor: Colors.blue[600],
+                child: title != "Recently Deleted"
+                    ? Icon(Icons.merge_type)
+                    : Icon(Icons.restore),
                 onPressed: () {
-                  newCard();
-                }),
+                  if (controller.selectedIndexes.length == 0) {
+                    Get.snackbar("Select Something", "or not");
+                    return;
+                  }
+                  _showDialog(context);
+                })
+            : (title == "Combined" || title == "Recently Deleted")
+                ? null
+                : FloatingActionButton(
+                    backgroundColor: Colors.blue[600],
+                    child: Icon(Icons.add),
+                    onPressed: () {
+                      newCard();
+                    }),
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text(title),
@@ -146,12 +153,22 @@ class _ListState extends State<Lists> {
                   ),
                   IconButton(
                     icon: Icon(Icons.delete),
-                    onPressed: delete,
+                    onPressed: () {
+                      List addList = new List();
+                      addList.addAll(controller.selectedIndexes);
+                      addToRecentlyDeleted(addList);
+                      delete(addList);
+                      setState(() {
+                        controller.set(deck.getLength());
+                      });
+                    },
                   ),
-                  IconButton(
-                    icon: Icon(Icons.play_arrow),
-                    onPressed: combine,
-                  ),
+                  title != "Recently Deleted"
+                      ? IconButton(
+                          icon: Icon(Icons.play_arrow),
+                          onPressed: combine,
+                        )
+                      : Text(""),
                 ]
               : [
                   dropdownWidget(deck),
@@ -163,18 +180,23 @@ class _ListState extends State<Lists> {
                       });
                     },
                   ),
-                  IconButton(
-                    icon: Icon(
-                      Icons.play_arrow,
-                      color: Colors.white,
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, "/cardView",
-                          arguments: {"list": deck.getCards(), "title": title});
-                    },
-                  ),
+                  title != "Recently Deleted"
+                      ? IconButton(
+                          icon: Icon(
+                            Icons.play_arrow,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            Navigator.pushNamed(context, "/cardView",
+                                arguments: {
+                                  "list": deck.getCards(),
+                                  "title": title
+                                });
+                          },
+                        )
+                      : Text(""),
                 ],
-          backgroundColor: Colors.blue[700],
+          backgroundColor: Colors.blue[600],
         ),
         body: Container(
           color: Colors.grey[200],
@@ -196,6 +218,10 @@ class _ListState extends State<Lists> {
                         deck
                             .getCards()
                             .removeWhere((item) => item.getId() == tempId);
+                        if (title != "Recently Deleted") {
+                          root.addDeleted(item);
+                        }
+                        controller.set(deck.getLength());
                       });
                     },
                   ),
@@ -206,7 +232,7 @@ class _ListState extends State<Lists> {
                   actions: [
                     IconSlideAction(
                         caption: 'Edit',
-                        color: Colors.blue,
+                        color: Colors.blue[600],
                         icon: Icons.edit,
                         onTap: () {
                           editCard(item);
@@ -220,7 +246,10 @@ class _ListState extends State<Lists> {
                         onTap: () => {
                               setState(() {
                                 deck.removeCard(deck.getCards().indexOf(item));
-                                //.removeWhere((item) => item.getId() == tempId);
+                                if (title != "Recently Deleted") {
+                                  root.addDeleted(item);
+                                }
+                                controller.set(deck.getLength());
                               })
                             }),
                   ],
@@ -242,7 +271,7 @@ class _ListState extends State<Lists> {
       "Date",
     ]; //The li
     return DropdownButton(
-      dropdownColor: Colors.blue[700],
+      dropdownColor: Colors.blue[600],
       style: TextStyle(
         color: Colors.white,
         fontSize: 15,
@@ -328,5 +357,90 @@ class _ListState extends State<Lists> {
                 ],
               )),
         ));
+  }
+
+  Future _showDialog(context) async {
+    Folder selectedFolder;
+    Deck selectedDeck;
+    String selectedFolderName;
+    String selectedDeckName;
+    List<String> decks = [];
+    return await showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.grey[200],
+          content: StatefulBuilder(
+            builder: (BuildContext context, StateSetter setState) {
+              return Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
+                DropdownButton<String>(
+                  onChanged: (String value) {
+                    setState(() {
+                      selectedFolderName = value;
+                      selectedFolder = root
+                          .getFolders()[root.getFolderNames().indexOf(value)];
+                      decks = selectedFolder.getDeckNames();
+                    });
+                  },
+                  hint: Text('Choose a Folder'),
+                  value: selectedFolderName,
+                  items: root.getFolderNames().map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+                SizedBox(height: 15),
+                DropdownButton<String>(
+                  onChanged: (String value) {
+                    setState(() {
+                      selectedDeckName = value;
+                    });
+                  },
+                  hint: new Text('Choose a Deck'),
+                  value: selectedDeckName,
+                  items: decks.map((String value) {
+                    return new DropdownMenuItem<String>(
+                      value: value,
+                      child: new Text(value),
+                    );
+                  }).toList(),
+                ),
+                SizedBox(height: 30),
+                NiceButton(
+                  width: 100,
+                  elevation: 8.0,
+                  radius: 52.0,
+                  text: "Add",
+                  background: Colors.blue,
+                  onPressed: () {
+                    setState(() {
+                      selectedDeck = selectedFolder.getDecks()[selectedFolder
+                          .getDeckNames()
+                          .indexOf(selectedDeckName)];
+
+                      for (int i = 0;
+                          i < controller.selectedIndexes.length;
+                          i++) {
+                        selectedDeck.addCard(
+                            deck.getCards()[controller.selectedIndexes[i]]);
+                      }
+
+                      delete(controller.selectedIndexes);
+
+                      controller.set(deck.getLength());
+
+                      print("in showdiag");
+                      Navigator.pop(context);
+                    });
+                  },
+                ),
+              ]);
+            },
+          ),
+        );
+      },
+    );
   }
 }

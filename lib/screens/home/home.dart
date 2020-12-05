@@ -3,16 +3,20 @@
    Author: Andy Tran
 */
 import 'package:flutter/material.dart';
+import 'package:icue_cards/views/dir_root.dart';
 import 'package:nice_button/NiceButton.dart';
 import '../../services/auth.dart';
 import 'package:icue_cards/services/database.dart';
 import 'package:provider/provider.dart';
-//import 'package:icue_cards/main.dart';
 import 'package:icue_cards/models/student.dart';
+import 'package:icue_cards/models/root.dart';
+import 'package:icue_cards/services/initState.dart';
 
 class Home extends StatelessWidget {
   // You need this to access signOut()
   final AuthService _auth = AuthService();
+
+  Root root = initState();
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +30,11 @@ class Home extends StatelessWidget {
             elevation: 0.0,
             actions: <Widget>[
               NiceButton(
-                width: 120,
+                width: 110,
                 elevation: 8.0,
                 radius: 52.0,
                 text: "Sign out",
-                background: Colors.red,
+                background: Colors.red[800],
                 onPressed: () async {
                   await _auth.signOut();
                 },
@@ -46,7 +50,13 @@ class Home extends StatelessWidget {
                     padding: EdgeInsets.all(0.0),
                     child: Image.asset('assets/study_button.png'),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/mainDirectory');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MainDirectory(
+                                  root: root,
+                                )),
+                      );
                     },
                   ),
                 ),

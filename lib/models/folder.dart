@@ -11,6 +11,14 @@ class Folder {
     _order = "default";
   }
 
+  List<String> getDeckNames() {
+    List<String> ret = new List();
+    for (int i = 0; i < _decks.length; i++) {
+      ret.add(_decks[i].getName());
+    }
+    return ret;
+  }
+
   void setList(List<Deck> list) {
     _decks = list;
   }

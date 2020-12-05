@@ -1,3 +1,8 @@
+/* The card creation screen
+   [used to create a card]
+   Author: Henry Tu
+*/
+
 import 'package:flutter/material.dart';
 import '../models/iCueCard.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
@@ -266,71 +271,3 @@ class _NewCardState extends State<NewCard> {
 
 typedef void OnPickImageCallback(
     double maxWidth, double maxHeight, int quality);
-
-//Padding(
-//   padding: const EdgeInsets.all(8.0),
-//   child: Column(
-//     children: [
-//       TextField(
-//         maxLength: 450,
-//         minLines: 1,
-//         maxLines: 7,
-//         controller: titleController1,
-//         autofocus: true,
-//         onEditingComplete: create,
-//         decoration: InputDecoration(labelText: 'Front'),
-//         style: TextStyle(fontSize: 25),
-//       ),
-//       SizedBox(height: 15),
-//       TextField(
-//         controller: titleController2,
-//         autofocus: true,
-//         onEditingComplete: create,
-//         decoration: InputDecoration(labelText: 'Back'),
-//         style: TextStyle(fontSize: 25),
-//       ),
-//       SizedBox(height: 15),
-//       Row(
-//         children: [
-//           IconButton(
-//               icon: Icon(Icons.color_lens),
-//               iconSize: 45,
-//               color: currentColor,
-//               onPressed: () {
-//                 showDialog(
-//                   context: context,
-//                   child: AlertDialog(
-//                     title: const Text('Pick a color!'),
-//                     content: SingleChildScrollView(
-//                       child: BlockPicker(
-//                         pickerColor: currentColor,
-//                         onColorChanged: changeColor,
-//                       ),
-//                     ),
-//                   ),
-//                 );
-//               }),
-//           IconButton(
-//             icon: Icon(Icons.insert_photo),
-//             iconSize: 45,
-//             color: Colors.grey[800],
-//             onPressed: () {
-//               isVideo = false;
-//               _onImageButtonPressed(ImageSource.gallery,
-//                   context: context);
-//             },
-//           )
-//         ],
-//       ),
-//       SizedBox(height: 15),
-//       NiceButton(
-//         width: 180,
-//         elevation: 8.0,
-//         radius: 52.0,
-//         text: buttonText,
-//         background: Colors.blue,
-//         onPressed: () => create(),
-//       ),
-//     ],
-//   ),
-// )

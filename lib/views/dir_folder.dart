@@ -1,8 +1,14 @@
+/* The folder screen
+   [List all the decks in a folder]
+   Author: Henry Tu
+*/
+
 import 'package:flutter/material.dart';
 import 'package:icue_cards/tools/shuffle.dart';
 import '../models/iCueCard.dart';
 import '../models/folder.dart';
 import '../models/deck.dart';
+import '../models/root.dart';
 import './card_list.dart';
 import 'package:multi_select_item/multi_select_item.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -11,16 +17,20 @@ import 'package:reorderables/reorderables.dart';
 
 class DirectoryDeck extends StatefulWidget {
   final Folder folder;
-  DirectoryDeck({this.folder});
+  final Root root;
+  DirectoryDeck({this.folder, this.root});
   @override
-  _DirectoryDeckState createState() => _DirectoryDeckState(this.folder);
+  _DirectoryDeckState createState() =>
+      _DirectoryDeckState(this.folder, this.root);
 }
 
 class _DirectoryDeckState extends State<DirectoryDeck> {
   MultiSelectController controller = new MultiSelectController();
   Folder folder;
-  _DirectoryDeckState(Folder folder) {
+  Root root;
+  _DirectoryDeckState(Folder folder, Root root) {
     this.folder = folder;
+    this.root = root;
   }
 
   @override
@@ -111,6 +121,10 @@ class _DirectoryDeckState extends State<DirectoryDeck> {
             list.sort((b, a) =>
                 a.compareTo(b)); //reoder from biggest number, so it wont error
             list.forEach((element) {
+              Deck d = folder.getDecks()[element];
+              d.getCards().forEach((card) {
+                root.addDeleted(card);
+              });
               folder.removeDeck(element);
             });
 
@@ -198,9 +212,8 @@ class _DirectoryDeckState extends State<DirectoryDeck> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => Lists(
-                          deck: folder.getDecks()[index],
-                        )),
+                    builder: (context) =>
+                        Lists(deck: folder.getDecks()[index], root: root)),
               );
             }
           },
@@ -215,9 +228,12 @@ class _DirectoryDeckState extends State<DirectoryDeck> {
             }
           },
           child: Center(
-            child: Text(
-              folder.getDecks()[index].getName(),
-              textAlign: TextAlign.center,
+            child: Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Text(
+                folder.getDecks()[index].getName(),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ),
@@ -235,15 +251,17 @@ class _DirectoryDeckState extends State<DirectoryDeck> {
     );
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.indigo,
-          child: Icon(Icons.add),
-          onPressed: () {
-            _showDialog();
-          }),
-      backgroundColor: Colors.grey[300],
+      floatingActionButton: controller.isSelecting == true
+          ? null
+          : FloatingActionButton(
+              backgroundColor: Colors.lightBlue[800],
+              child: Icon(Icons.add),
+              onPressed: () {
+                _showDialog();
+              }),
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        backgroundColor: Colors.indigo,
+        backgroundColor: Colors.lightBlue[800],
         elevation: 0,
         title: Text(folder.getName()),
         actions: (controller.isSelecting)

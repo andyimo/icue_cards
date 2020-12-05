@@ -69,7 +69,7 @@ class _CardViewState extends State<CardView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: Colors.blue[600],
+        backgroundColor: Colors.lightBlueAccent[500],
       ),
       body: StreamBuilder<List<iCueCard>>(
           stream: _streamController.stream,
@@ -96,11 +96,11 @@ class _CardViewState extends State<CardView> {
           color: Colors.grey[300],
           child: TinderSwapCard(
             swipeUp: true,
-            swipeDown: true,
+            swipeDown: false,
             orientation: AmassOrientation.TOP,
             totalNum: cards.length,
             stackNum: 4,
-            swipeEdge: 3.0,
+            swipeEdge: 5.0,
             maxWidth: MediaQuery.of(context).size.width * 0.86,
             maxHeight: MediaQuery.of(context).size.height * 0.8,
             minWidth: MediaQuery.of(context).size.width * 0.85,
@@ -110,12 +110,13 @@ class _CardViewState extends State<CardView> {
                 //the card
                 key: ObjectKey(cards[index]),
                 direction: FlipDirection.HORIZONTAL,
-                speed: 1000,
+                speed: 300,
                 front: Container(
                   //the card
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
+                        //color: cards[index].getColor(),
                         color: Colors.grey,
                         blurRadius: 2.0,
                         spreadRadius: 0.0,
@@ -128,6 +129,8 @@ class _CardViewState extends State<CardView> {
                         'assets/background.png',
                       ),
                       fit: BoxFit.fitHeight,
+                      // colorFilter: new ColorFilter.mode(
+                      //     Colors.black.withOpacity(0.98), BlendMode.dstATop),
                     ),
                     borderRadius: BorderRadius.circular(7.5),
                   ),
@@ -149,6 +152,7 @@ class _CardViewState extends State<CardView> {
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
+                          //color: cards[index].getColor(),
                           color: Colors.grey,
                           blurRadius: 2.0,
                           spreadRadius: 0.0,
@@ -161,6 +165,8 @@ class _CardViewState extends State<CardView> {
                           'assets/background.png',
                         ),
                         fit: BoxFit.fitHeight,
+                        // colorFilter: new ColorFilter.mode(
+                        //     Colors.black.withOpacity(0.98), BlendMode.dstATop),
                       ),
                       borderRadius: BorderRadius.circular(5),
                     ),
@@ -181,19 +187,14 @@ class _CardViewState extends State<CardView> {
                         cards[index].getImage() == null
                             ? Container()
                             : Expanded(
-                                //   child: PhotoView(
-                                //   imageProvider: AssetImage('assets/long.png'),
-                                // )
                                 child: GestureDetector(
                                   onDoubleTap: () async {
                                     await showDialog(
                                         context: context,
                                         builder: (_) => ImageDialog(
                                             cards[index].getImage()));
-                                    //AssetImage('assets/long.png')));
                                   },
                                   child: Image(
-                                    //image: AssetImage('assets/long.png'),
                                     image: cards[index].getImage(),
                                     fit: BoxFit.scaleDown,
                                   ),
@@ -204,23 +205,23 @@ class _CardViewState extends State<CardView> {
               ),
             ),
             cardController: controller = CardController(),
-            swipeUpdateCallback: (DragUpdateDetails details, Alignment align) {
-              /// Get swiping card's alignment
-              if (align.x < 0) {
-                //Card is LEFT swiping
-              } else if (align.x > 0) {
-                //Card is RIGHT swiping
-              }
-            },
+            // swipeUpdateCallback: (DragUpdateDetails details, Alignment align) {
+            //   /// Get swiping card's alignment
+            //   if (align.x < 0) {
+            //   } else if (align.x > 0) {
+            //     //Card is RIGHT swiping
+            //   }
+            // },
             swipeCompleteCallback:
                 (CardSwipeOrientation orientation, int index) {
               if (orientation == CardSwipeOrientation.LEFT) {
                 _addToStream(cards, index);
-              } else if (orientation == CardSwipeOrientation.RIGHT ||
-                  orientation == CardSwipeOrientation.UP ||
-                  orientation == CardSwipeOrientation.DOWN) {
-                _keepStream(cards, index);
               }
+              // else if (orientation == CardSwipeOrientation.RIGHT ||
+              //     orientation == CardSwipeOrientation.UP ||
+              //     orientation == CardSwipeOrientation.DOWN) {
+              //   _keepStream(cards, index);
+              // }
 
               /// Get orientation & index of swiped card!
             },
@@ -257,13 +258,3 @@ class _CardViewState extends State<CardView> {
     ));
   }
 }
-
-// class ImageDialog extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//         child: PhotoView(
-//       imageProvider: AssetImage("assets/long.png"),
-//     ));
-//   }
-// }
