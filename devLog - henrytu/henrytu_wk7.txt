@@ -1,0 +1,14 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Henry Tu (101120384)
+
+Nov. 1
+Week 7
+
+- Complete the 3D card view page where a card can be presented as a real card. Tap to flip, swipe to discard. Also added a restart button and a make-random button, the restart button will bring every card back again, the random button will randomize the deck. Added stream so that a card can be swiped to the left to put to the back of the deck, swipe right to discard.
+
+- Added two buttons on the app home page so the card part and the game part can be correctly navigated through
+
+- Took the responsibility of merging everybody's code in to one whole app for the preparation of D2
+
+

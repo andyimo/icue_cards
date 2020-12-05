@@ -1,0 +1,10 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Henry Tu (101120384)
+
+October 11
+Week 4
+
+- keep working on the card list page, enables it to add, delete, edit a card.
+
+- created a card page for the use of adding a card.  

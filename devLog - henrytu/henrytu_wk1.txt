@@ -1,0 +1,15 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Henry Tu (101120384)
+
+September 20
+Week 1
+
+- Group meetings are heavily on the the discussion of what kind of app to build and to choose which language
+
+- The group conducted research trying to make the choice between Android Studio and Flutter.
+
+- Exchanged ideas on the categories of app, gaming app, educational app, lifestyle app, watched videos from previous semester and talked about the most impressive ones, decided to go with a study app of card study.
+
+- Wrote the functional and nonfunctional properties of the D1 report.
+

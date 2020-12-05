@@ -1,0 +1,10 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Henry Tu (101120384)
+
+Nov. 22
+Week 10
+
+- Implemented the multi-select functionality allowing make group changes(delete, combine) to folders, decks and cards
+
+- Spent most of the week preparing D3, going through all the lectures

@@ -1,0 +1,10 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Henry Tu (101120384)
+
+Nov. 29
+Week 11
+
+- Finishing up my own part, added the final functionalities including search a card, order the card list by name/time of creation, a recently deleted list where a deleted deck can be discarded forever or restored by choice.
+
+- Did another merge of everybody's work

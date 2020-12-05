@@ -1,0 +1,16 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Henry Tu (101120384)
+
+September 27
+Week 2
+
+- The group decided to use Flutter as the mobile framework since it supports both Android and IOS so that everyone can have access to it.
+
+- Watched online videos to study GitHub basics
+
+- made all necessary downloads and installations(flutter) to set up the programming environment
+
+- Watched online tutorial for basic operations of flutter, laid the foundation of the project
+
+- discussed the basic parts of the project (Andy: database/login, Me: card OOP structure/view, David and Suki: two games) and divide the labour of the entire structure

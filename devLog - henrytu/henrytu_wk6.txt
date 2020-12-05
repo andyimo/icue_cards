@@ -1,0 +1,13 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Henry Tu (101120384)
+
+October 25
+Week 6
+
+- After the reading week, I have fully completed the card list page where a card can be added, deleted, edited(change colour) and changed position . 
+
+- Started on building the 3D card view page, where a card can be presented like a real card. It can be tapped to flip the card to see the other side, swiped away to discard it and see the next card.
+
+- Encountered difficulty testing Andy's user login, the debug console gave tons of error messages and the page keeps loading.
+

@@ -1,0 +1,8 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Henry Tu (101120384)
+
+October 18
+Week 5
+
+- During the reading week, the working shifted from practice to theoretical. I brainstormed about the possible functionalities my part can have, including search function and multiple select cards to make changes.

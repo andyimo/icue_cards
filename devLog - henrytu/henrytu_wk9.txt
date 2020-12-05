@@ -1,0 +1,17 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Henry Tu (101120384)
+
+Nov. 15
+Week 9
+
+- Implemented a few smart gestures to for better user experience, e.g. double tap on a folder/deck goes to the 3D card view of all cards in the entire folder/deck
+
+- Created three other classes for storing cards, completed the entire file system objective oriented structure where a root contains multiple folders to represent a course, a folder contains multiple decks to represent a chapter or other categories. Finally a deck contains multiple cards.
+
+	Root -> Folder -> Deck -> Card
+
+- Implemented the entire data structure into the app. A folder/deck can be added/deleted/reordered
+
+- drew the object-oriented architecture view in a group of three for the report. Proof read of the report.
+

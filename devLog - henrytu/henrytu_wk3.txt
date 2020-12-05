@@ -1,0 +1,14 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Henry Tu (101120384)
+
+October 4
+Week 3
+
+- Started watching more in-depth tutorial video online, be able to build simple apps and understand how flutter manages the page by widgets
+
+- Give thought to the way to build the object oriented structure of the file system hierarchy
+
+- Created a iCueCard class as the card object, started the coding of the card list page
+
+- Built the main page of the app
