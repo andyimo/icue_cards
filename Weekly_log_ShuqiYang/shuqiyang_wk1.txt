@@ -1,0 +1,14 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Shuqi Yang (101114181)
+
+WEEKLY LOG Week 1
+September 20 - 26, 2020
+
+-design the mock according to the proposed content for the 
+deliverable 1
+-find some programming languages which can try out for mobile 
+software development and list the pros and cons of each programming 
+language and compare them
+
+
