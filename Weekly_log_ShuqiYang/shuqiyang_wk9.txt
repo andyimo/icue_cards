@@ -1,0 +1,17 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Shuqi Yang (101114181)
+
+WEEKLY LOG Week 8
+November 15 - 21, 2020
+
+-add the button navigation bar, which can click the icon on the
+navigation bar to skip to another page (like home page and create 
+a new icuecard)
+-change the order of question to randomize which can makes it 
+easier for users to review their cards
+-draw the object-oriented architectural graph, discuss the factory 
+design pattern with David and write factory design pattern part on 
+d3 report with David
+
+
