@@ -6,7 +6,9 @@ WEEKLY LOG Week 3
 October 4 - 10, 2020
 
 -start to follow online tutorial on how to program in Flutter
--learn the basic framework of Flutter and understand the structure and the underlying code
--according to the Kahoot! Game part, find the relevant information for Flutter
+-learn the basic framework of Flutter and understand the structure 
+and the underlying code
+-according to the Kahoot! Game part, find the relevant information 
+for Flutter
 -do some practice for Flutter
 
