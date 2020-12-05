@@ -25,15 +25,6 @@ class Home extends StatelessWidget {
             backgroundColor: Color(0xff3e85ee),
             elevation: 0.0,
             actions: <Widget>[
-              // logout icon
-              /*
-              FlatButton.icon(
-                icon: Icon(Icons.person),
-                label: Text('logout'),
-                onPressed: () async {
-                  await _auth.signOut();
-                },
-              )*/
               NiceButton(
                 width: 120,
                 elevation: 8.0,
