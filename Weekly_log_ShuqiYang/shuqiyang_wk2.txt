@@ -2,7 +2,7 @@ Team   : Ogre Fanclub
 Project: ICUE CARDS
 Name   : Shuqi Yang (101114181)
 
-WEEKLY LOG Week 1
+WEEKLY LOG Week 2
 September 27 - October 3, 2020
 
 -final decision to use dart & flutter framework to development 
