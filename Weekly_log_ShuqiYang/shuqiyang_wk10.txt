@@ -1,0 +1,13 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Shuqi Yang (101114181)
+
+WEEKLY LOG Week 10
+November 22 - 28, 2020
+
+-review the lecture and prepare the oral exam for d3
+-keep optimize the Kahoot page UI
+-want to add timer and background music, but not have 
+too much progress
+
+
