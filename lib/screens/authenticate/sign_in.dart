@@ -34,6 +34,7 @@ class _SignInState extends State<SignIn> {
     return loading
         ? Loading()
         : Scaffold(
+            resizeToAvoidBottomPadding: false,
             backgroundColor: Color(0xffa5eaee),
             body: Container(
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
