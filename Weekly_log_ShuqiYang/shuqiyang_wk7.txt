@@ -1,0 +1,13 @@
+Team   : Ogre Fanclub 
+Project: ICUE CARDS
+Name   : Shuqi Yang (101114181)
+
+WEEKLY LOG Week 7
+November 1 - 7, 2020
+
+-make a separate page to list of mistakes, user can 
+choose whether to review or not
+-optimize the UI of the page
+-prepare the presentation for deliverable d2
+
+
