@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../models/iCueCard.dart';
+import 'iCuecard.dart';
 import 'Kahootstart.dart';
 import 'KahootResult.dart';
 
 class Review extends StatefulWidget {
   final List<iCueCard> wronglist;
+
+  //var strtime;
   Review({this.wronglist});
   @override
   _ReviewState createState() => _ReviewState(this.wronglist);
@@ -13,8 +15,12 @@ class Review extends StatefulWidget {
 
 class _ReviewState extends State<Review> {
   List<iCueCard> _wronglist;
+
+  //var _strtime;
   _ReviewState(List<iCueCard> wronglist) {
     _wronglist = wronglist;
+
+    //_strtime = strtime;
   }
   int index = 0;
 
@@ -36,7 +42,7 @@ class _ReviewState extends State<Review> {
                 ),
               ),
               new Text(
-                "You do everything right!",
+                "Nothing to review!",
                 style: TextStyle(
                   fontSize: 30,
                   color: Colors.blue,
@@ -104,17 +110,6 @@ class _ReviewState extends State<Review> {
                 ),
               ),
               Positioned(
-                top: 18.0,
-                child: Text(
-                  "Wrong questions!",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.blue,
-                  ),
-                ),
-              ),
-              Positioned(
                 bottom: 30.0,
                 child: Row(children: <Widget>[
                   RaisedButton(
@@ -129,9 +124,11 @@ class _ReviewState extends State<Review> {
                   ),
                   Container(width: 10.0, height: 1.0),
                   RaisedButton(
-                    child: Text('Back to Start page!'),
-                    onPressed: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => KahootResult())),
+                    child: Text('Back to Result page!'),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => KahootResult())),
                   ),
                   Container(width: 10.0, height: 1.0),
                   RaisedButton(
@@ -153,3 +150,4 @@ class _ReviewState extends State<Review> {
     }
   }
 }
+
