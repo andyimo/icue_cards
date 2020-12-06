@@ -307,7 +307,7 @@ class _ListState extends State<Lists> {
 
   Widget listContainer(String front, String back, Color cardColor, int index) {
     return Container(
-        height: 110,
+        height: 100,
         child: InkWell(
           onTap: () {
             if (controller.isSelecting) {
@@ -335,7 +335,7 @@ class _ListState extends State<Lists> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 17.5, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(2.5, 17.5, 0, 2.5),
                           child: Text(
                             front,
                             textAlign: TextAlign.center,
@@ -352,10 +352,10 @@ class _ListState extends State<Lists> {
                       ),
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(5, 0, 0, 5),
                           child: Text(back,
                               textAlign: TextAlign.center,
-                              style: (TextStyle(fontSize: 19))),
+                              style: (TextStyle(fontSize: 19, height: 1.75))),
                         ),
                       ),
                     ],
