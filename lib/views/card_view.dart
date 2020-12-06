@@ -257,9 +257,14 @@ class _CardViewState extends State<CardView> {
   }
 
   Widget ImageDialog(AssetImage a) {
-    return Container(
-        child: PhotoView(
-      imageProvider: a,
-    ));
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+      ),
+      body: Container(
+          child: PhotoView(
+        imageProvider: a,
+      )),
+    );
   }
 }

@@ -102,87 +102,89 @@ class _NewCardState extends State<NewCard> {
         //     child: Image.file(File(_imageFile.path)),
         //     label: 'image_picker_example_picked_image');
       }
-      return Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            TextField(
-              maxLength: 450,
-              minLines: 1,
-              maxLines: 7,
-              controller: titleController1,
-              autofocus: true,
-              onEditingComplete: create,
-              decoration: InputDecoration(labelText: 'Front'),
-              style: TextStyle(fontSize: 25),
-            ),
-            SizedBox(height: 15),
-            TextField(
-              controller: titleController2,
-              autofocus: true,
-              onEditingComplete: create,
-              decoration: InputDecoration(labelText: 'Back'),
-              style: TextStyle(fontSize: 25),
-            ),
-            SizedBox(height: 15),
-            Row(
-              children: [
-                IconButton(
-                    icon: Icon(Icons.color_lens),
-                    iconSize: 45,
-                    color: currentColor,
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        child: AlertDialog(
-                          title: const Text('Pick a color!'),
-                          content: SingleChildScrollView(
-                            child: BlockPicker(
-                              pickerColor: currentColor,
-                              onColorChanged: changeColor,
+      return SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              TextField(
+                maxLength: 450,
+                minLines: 1,
+                maxLines: 7,
+                controller: titleController1,
+                autofocus: true,
+                onEditingComplete: create,
+                decoration: InputDecoration(labelText: 'Front'),
+                style: TextStyle(fontSize: 25),
+              ),
+              SizedBox(height: 15),
+              TextField(
+                controller: titleController2,
+                autofocus: true,
+                onEditingComplete: create,
+                decoration: InputDecoration(labelText: 'Back'),
+                style: TextStyle(fontSize: 25),
+              ),
+              SizedBox(height: 15),
+              Row(
+                children: [
+                  IconButton(
+                      icon: Icon(Icons.color_lens),
+                      iconSize: 45,
+                      color: currentColor,
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          child: AlertDialog(
+                            title: const Text('Pick a color!'),
+                            content: SingleChildScrollView(
+                              child: BlockPicker(
+                                pickerColor: currentColor,
+                                onColorChanged: changeColor,
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    }),
-                InkWell(
-                  onLongPress: () async {
-                    if (_assetImage != null) {
-                      await showDialog(
-                          context: context,
-                          builder: (_) => ImageDialog(_assetImage));
-                    }
-                  },
-                  onDoubleTap: () {
-                    setState(() {
-                      _assetImage = null;
-                      imageButtonColor = Colors.grey[800];
-                    });
-                  },
-                  child: IconButton(
-                    icon: Icon(Icons.insert_photo),
-                    iconSize: 45,
-                    color: imageButtonColor,
-                    onPressed: () {
-                      //_imageFile = null;
-                      isVideo = false;
-                      _onImageButtonPressed(ImageSource.gallery,
-                          context: context);
+                        );
+                      }),
+                  InkWell(
+                    onLongPress: () async {
+                      if (_assetImage != null) {
+                        await showDialog(
+                            context: context,
+                            builder: (_) => ImageDialog(_assetImage));
+                      }
                     },
-                  ),
-                )
-              ],
-            ),
-            SizedBox(height: 15),
-            NiceButton(
-              width: 180,
-              elevation: 8.0,
-              radius: 52.0,
-              text: buttonText,
-              background: Colors.blue,
-              onPressed: () => create(),
-            ),
-          ],
+                    onDoubleTap: () {
+                      setState(() {
+                        _assetImage = null;
+                        imageButtonColor = Colors.grey[800];
+                      });
+                    },
+                    child: IconButton(
+                      icon: Icon(Icons.insert_photo),
+                      iconSize: 45,
+                      color: imageButtonColor,
+                      onPressed: () {
+                        //_imageFile = null;
+                        isVideo = false;
+                        _onImageButtonPressed(ImageSource.gallery,
+                            context: context);
+                      },
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: 15),
+              NiceButton(
+                width: 180,
+                elevation: 8.0,
+                radius: 52.0,
+                text: buttonText,
+                background: Colors.blue,
+                onPressed: () => create(),
+              ),
+            ],
+          ),
         ),
       );
     }
@@ -261,10 +263,15 @@ class _NewCardState extends State<NewCard> {
   }
 
   Widget ImageDialog(AssetImage a) {
-    return Container(
-        child: PhotoView(
-      imageProvider: a,
-    ));
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+      ),
+      body: Container(
+          child: PhotoView(
+        imageProvider: a,
+      )),
+    );
   }
 }
 
