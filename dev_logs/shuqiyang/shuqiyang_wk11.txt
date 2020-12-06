@@ -5,11 +5,13 @@ Name   : Shuqi Yang (101114181)
 WEEKLY LOG Week 11
 November 29 - December 5, 2020
 
+-Connect the user's Icuecard to Kahoot Game Part instead of Harcode
+-prepared the D4
 -a lot of time was spent upgrading the SDK due to the 
 unsupported versions of the Flutter SDK and Dart SDK, 
 because some functions required an external package. 
 After the upgrade was completed, it was not able to 
-function properly for some unknown reason. This has 
-led me to nothing special in this week.
--prepared the D4
+function properly for some unknown reason. This wasted 
+several days of my time.
+
 
