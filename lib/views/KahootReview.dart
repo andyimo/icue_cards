@@ -4,22 +4,26 @@ import '../models/iCueCard.dart';
 import 'Kahootstart.dart';
 import 'KahootResult.dart';
 
+
 class Review extends StatefulWidget {
   final List<iCueCard> wronglist;
+  final String score;
 
   //var strtime;
-  Review({this.wronglist});
+  Review({this.score, this.wronglist});
   @override
-  _ReviewState createState() => _ReviewState(this.wronglist);
+  _ReviewState createState() => _ReviewState(this.score, this.wronglist);
 }
 
 class _ReviewState extends State<Review> {
   List<iCueCard> _wronglist;
-
+  String _score;
+  String str;
+  var strtime = '';
   //var _strtime;
-  _ReviewState(List<iCueCard> wronglist) {
+  _ReviewState(String score, List<iCueCard> wronglist) {
     _wronglist = wronglist;
-
+    _score = score;
     //_strtime = strtime;
   }
   int index = 0;
@@ -30,6 +34,7 @@ class _ReviewState extends State<Review> {
     if (_wronglist.length == 0) {
       return Scaffold(
           appBar: AppBar(
+              //leading: Container(),
               title: Text(
             "Review",
           )),
@@ -128,7 +133,11 @@ class _ReviewState extends State<Review> {
                     onPressed: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => KahootResult())),
+                            builder: (context) => KahootResult(
+                                  score: _score,
+                                  wronglist: _wronglist,
+                                  strtime: strtime,
+                                ))),
                   ),
                   Container(width: 10.0, height: 1.0),
                   RaisedButton(
