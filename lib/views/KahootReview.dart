@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../models/iCueCard.dart';
+import 'package:../models/iCueCard.dart';
 import 'Kahootstart.dart';
 import 'KahootResult.dart';
 
