@@ -7,7 +7,8 @@ November 22 - 28, 2020
 
 -review the lecture and prepare the oral exam for d3
 -keep optimize the Kahoot page UI
--want to add timer and background music, but not have 
+-add timer, user can Countdown or not 
+-want to add background music, but not have 
 too much progress
 
 
