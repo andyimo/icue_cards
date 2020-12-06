@@ -64,10 +64,12 @@ class _MistakesReviewState extends State<MistakesReview> {
       iCueCard _current;
       _current = list[_index];
       int totallen = list.length;
-      var _front = _current.getFront();
-      var _back = _current.getBack();
+      var _front = _current.getBack();
+      var _back = _current.getFront();
       return Scaffold(
-          appBar: AppBar(title: Text("Review the Mistakes")),
+          appBar: AppBar(
+            title: Text("Review the Mistakes"),
+          ),
           body: new Container(
             padding: const EdgeInsets.only(top: 10),
             //height: ScreenUtil().setHeight(380), // 高度
@@ -78,7 +80,8 @@ class _MistakesReviewState extends State<MistakesReview> {
               itemBuilder: (BuildContext context, int index) {
                 return Container(
                   child: Card(
-                    color: Color.fromARGB(0xFF, 0x42, 0xA5, 0xF5),
+                    //color: Color.fromARGB(0xFF, 0x42, 0xA5, 0xF5),
+                    color: list[index].getColor(),
                     child: FlipCard(
                       //key: cardKey,
                       //flipOnTouch: false,
@@ -90,7 +93,7 @@ class _MistakesReviewState extends State<MistakesReview> {
                         onPressed: () => cardKey.currentState.toggleCard(),
                       ),*/
                           Text(
-                            list[index].getFront(),
+                            list[index].getBack(),
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 30.0,
@@ -101,7 +104,7 @@ class _MistakesReviewState extends State<MistakesReview> {
                       ),
                       back: Container(
                         child: Text(
-                          list[index].getBack(),
+                          list[index].getFront(),
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 30.0,

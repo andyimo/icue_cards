@@ -202,6 +202,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.2.0"
+  flutter_sensors:
+    dependency: "direct main"
+    description:
+      name: flutter_sensors
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.6"
   flutter_slidable:
     dependency: "direct main"
     description:

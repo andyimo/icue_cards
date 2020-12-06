@@ -4,6 +4,7 @@
 */
 import 'package:flutter/material.dart';
 import 'package:icue_cards/views/dir_root.dart';
+import 'package:icue_cards/views/game.dart';
 import 'package:nice_button/NiceButton.dart';
 import '../../services/auth.dart';
 import 'package:icue_cards/services/database.dart';
@@ -66,7 +67,8 @@ class Home extends StatelessWidget {
                     padding: EdgeInsets.all(0.0),
                     child: Image.asset('assets/game_button.png'),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/kahoot');
+                      Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => GamePage(root: root,)));
                     },
                   ),
                 ),

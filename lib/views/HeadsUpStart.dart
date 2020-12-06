@@ -4,23 +4,37 @@ import 'package:icue_cards/models/folder.dart';
 import 'HeadsUp.dart';
 import '../models/root.dart';
 import '../models/iCueCard.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HeadsUpStart extends StatefulWidget {
+  final Root root;
+  HeadsUpStart({this.root});
   @override
-  _HeadsUpStartState createState() => _HeadsUpStartState();
+  _HeadsUpStartState createState() => _HeadsUpStartState(root: this.root);
 }
 
 class _HeadsUpStartState extends State<HeadsUpStart> {
+  final Root root;
+  _HeadsUpStartState({this.root});
   var _dropFolder;
   var _dropDeck;
-  var _dropNum;
+  var _dropNum ;
   Folder _currentFolder;
   Deck currentDeck;
   int index = 0;
+  bool isEmpty1 = false;
+  bool isEmpty2 = false;
+  bool notInvoke1 = true;
+  bool notInvoke2 = true;
+  bool notInvoke3 = true;
+  int counter;
 
-  List<String> cards = ["Math", "Music", "English", "Computer Science"];
+
+  //List<String> cards = ["Math", "Music", "English", "Computer Science"];
   //Create a root object here
-  Root root = new Root("root");
+ // Root root1 = new Root("root");
   List<Folder> folders = new List<Folder>();
   //a list of string to store the name of the folders
   List<String> foldername = new List<String>();
@@ -35,15 +49,19 @@ class _HeadsUpStartState extends State<HeadsUpStart> {
   void initState() {
     super.initState();
 
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+    /*
     Folder folder = Folder("COMP 3004");
     Folder folder2 = Folder("COMP 3000");
     Folder folder3 = Folder("COMP 3007");
     Folder folder4 = Folder("COMP 3804");
 
-    root.addFolder(folder);
-    root.addFolder(folder2);
-    root.addFolder(folder3);
-    root.addFolder(folder4);
+    root1.addFolder(folder);
+    root1.addFolder(folder2);
+    root1.addFolder(folder3);
+    root1.addFolder(folder4);
 
     Deck deck = Deck("Chapter 1");
     Deck deck2 = Deck("Chapter 2");
@@ -71,7 +89,8 @@ class _HeadsUpStartState extends State<HeadsUpStart> {
         frontSide: 'sample question4',
         backSide: 'sample answer4',
         color: Colors.blue));
-
+        
+    */
     folders = root.getFolders();
     //use a for loop to get all the names of the folder in the root
     for(int i=0; i<root.getLength(); i++){
@@ -80,12 +99,36 @@ class _HeadsUpStartState extends State<HeadsUpStart> {
 
   }
 
+  showAlertDialog(BuildContext context) {
+ 
+    Widget cancelButton = FlatButton(
+      child: Text("Cancel"),
+      onPressed:  () {Navigator.of(context).pop();},
+    );
+  
+    AlertDialog alert = AlertDialog(
+      title: Text("Attention!"),
+      content: Text( "The current deck/folder you selected is empty",
+                  style: TextStyle(color: Colors.red, fontSize: 20.0),),
+      actions: [
+        cancelButton,
+      ],
+    );
+  
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Heads UP Page'),
+        title: Text('Heads Up Page'),
       ),
       body: Center(
         child: Column(children: [
@@ -99,8 +142,9 @@ class _HeadsUpStartState extends State<HeadsUpStart> {
             }).toList(),
             onChanged: (value){
               setState(() {
+                notInvoke1 = false;
                 _dropFolder = value;
-
+                print('$_dropFolder');
                 for(int i=0; i<root.getLength();i++){
                   if(folders[i].getName() == _dropFolder){
                     _currentFolder = folders[i];
@@ -108,9 +152,21 @@ class _HeadsUpStartState extends State<HeadsUpStart> {
                   }
                 }
                 decks = _currentFolder.getDecks();
+                //deckname.clear();
+                //List<String> tmp;
                 for(int i=0; i<_currentFolder.getLength(); i++){
                   deckname.add(decks[i].getName());
+                  //tmp.add(decks[i].getName());
                 }
+                //deckname = tmp;
+                
+                if(_currentFolder.getLength()==0){
+                  isEmpty1 = true;
+                  showAlertDialog(context);
+                }else{
+                  isEmpty1 = false;
+                }
+
               });
             },
             value: _dropFolder,
@@ -126,14 +182,22 @@ class _HeadsUpStartState extends State<HeadsUpStart> {
             }).toList(),
             onChanged: (value){
               setState(() {
+                notInvoke2 = false;
                 _dropDeck = value;
-
+                print('$_dropDeck');
                 for(int i=0; i<_currentFolder.getLength(); i++){
                   if(decks[i].getName() == _dropDeck){
                     currentDeck = decks[i];
                     break;
                   }
                 }
+                if(currentDeck.getLength() == 0){
+                  isEmpty2 = true;
+                  showAlertDialog(context);
+                } else{
+                  isEmpty2 = false;
+                }
+                print('$isEmpty2');
               });
             },
             value: _dropDeck,
@@ -149,6 +213,7 @@ class _HeadsUpStartState extends State<HeadsUpStart> {
                 }).toList(),
               onChanged: (value){
                 setState(() {
+                  notInvoke3 = false;
                   _dropNum = value;
                 });
               },
@@ -159,12 +224,23 @@ class _HeadsUpStartState extends State<HeadsUpStart> {
             child: Text('Start'),
             color: Colors.blueAccent[600],
             
-            onPressed: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      HeadsUp(deck: currentDeck, category:_dropDeck, questionNum:_dropNum)),
-            ),
+            onPressed: () {
+              if(notInvoke1 || notInvoke2 || notInvoke3){
+                null;
+                showAlertDialog(context);
+              }else{
+                if(isEmpty1 || isEmpty2){
+                  showAlertDialog(context);
+                }else{
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          HeadsUp(root: root, deck: currentDeck, category:_dropDeck, questionNum:_dropNum)),
+                  );
+                }
+              }
+            }
             
             /*
             onPressed: () {
