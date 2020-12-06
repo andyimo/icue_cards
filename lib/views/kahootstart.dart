@@ -1,25 +1,36 @@
 import 'package:flutter/material.dart';
-//import 'package:audioplayers/audio_cache.dart';
-//import 'package:audioplayers/audioplayers.dart';
 import 'Kahoot.dart';
 //import 'dart:async';
 
+//import 'root.dart';
+
+// ignore: must_be_immutable
 class KahootStart extends StatefulWidget {
+  //String str;
+  //final Root root;
+  //KahootStart({this.root, this.str});
   @override
-  _KahootStartState createState() => _KahootStartState();
+  _KahootStartState createState() =>
+      _KahootStartState(/*root: this.root, str: this.str*/);
 }
 
 class _KahootStartState extends State<KahootStart> {
-  List<String> cards = ["Math", "Music", "English"];
-  String _dropClassValue = "Math";
+  List<String> cards = ["CompSci", "Math", "Physics", "English"];
+  String _dropClassValue = "CompSci";
   int _dropNumValue = 5;
   int index = 0;
   int timer = 1;
   double mCurrentValue = 1.0;
-  // AudioPlayer audioPlayer = AudioPlayer();
+  String str;
+  //final Root root;
+
+  //_KahootStartState({this.root, this.str});
 
   @override
   Widget build(BuildContext context) {
+    if (str == null) {
+      str = '';
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text('Kahoot Page'),
@@ -28,7 +39,8 @@ class _KahootStartState extends State<KahootStart> {
         child: Column(children: [
           new DropdownButton(
               value: _dropClassValue,
-              items: <String>["Math", "Music", "English"].map((String value) {
+              items: <String>["CompSci", "Math", "Physics", "English"]
+                  .map((String value) {
                 return new DropdownMenuItem(
                   value: value,
                   child: Text(value),
@@ -41,7 +53,7 @@ class _KahootStartState extends State<KahootStart> {
               }),
           new DropdownButton(
               value: _dropNumValue,
-              items: <int>[5, 10].map((int value) {
+              items: <int>[5, 10, 15, 20].map((int value) {
                 return new DropdownMenuItem(
                   value: value,
                   child: Text("$value"),
@@ -101,6 +113,20 @@ class _KahootStartState extends State<KahootStart> {
                       questionNum: _dropNumValue,
                       timer: timer,
                       mCurrentValue: mCurrentValue)),
+            ),
+          ),
+          Text(
+            '',
+            style: TextStyle(
+              fontSize: 10,
+              color: Colors.blue,
+            ),
+          ),
+          Text(
+            '$str',
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.blue,
             ),
           ),
         ]),
