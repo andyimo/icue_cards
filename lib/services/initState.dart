@@ -248,18 +248,21 @@ Root initState() {
       frontSide: 'Heavyweight Process',
       backSide:
           'Type of Software Engineering Process that is document driven, has many different roles, checkpoints, highly bureaucratic',
-      color: Colors.blue));
+      color: Colors.blue,
+      image: AssetImage('assets/long.png')));
 
   deck.addCard(new iCueCard(
       frontSide: 'Software Engineering Process',
       backSide:
           'Template for organizing tasks and people in a project. Define who does what, when and how in the development of a software system. Has roles, workflows, milestones and guidelines.',
-      color: Colors.green));
+      color: Colors.green,
+      image: AssetImage('assets/1.jpg')));
   deck.addCard(iCueCard(
       frontSide: "Lightweight Process",
       backSide:
           ' Type of Software Engineering Process with focus on working code rather than documentation/Direct communication between client and developer/Low management overhead',
-      color: Colors.amber));
+      color: Colors.amber,
+      image: AssetImage('assets/width.jpg')));
 
   deck.addCard(new iCueCard(
       frontSide: 'Waterfall',
