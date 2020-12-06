@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'KahootReview.dart';
-import 'package:../models/iCueCard.dart';
+import '../models/iCueCard.dart';
 import 'Kahootstart.dart';
-import 'package:../screens/home/home.dart';
+import '../screens/home/home.dart';
 
 class KahootResult extends StatelessWidget {
   final String score;

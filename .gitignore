@@ -1861,3 +1861,4 @@ lib/views/dir_folder.dart
 lib/views/dir_root.dart
 pubspec.lock
 pubspec.yaml
+.packages

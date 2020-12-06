@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:../models/iCueCard.dart';
+import '../models/iCueCard.dart';
 import 'Kahootstart.dart';
 import 'KahootResult.dart';
 
@@ -150,4 +150,3 @@ class _ReviewState extends State<Review> {
     }
   }
 }
-
