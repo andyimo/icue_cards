@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+//import 'package:audioplayers/audio_cache.dart';
+//import 'package:audioplayers/audioplayers.dart';
 import 'Kahoot.dart';
-//import 'dart:async';
+import 'dart:async';
 
 //import 'root.dart';
 
@@ -90,18 +92,24 @@ class _KahootStartState extends State<KahootStart> {
               )
             ],
           ),
-          Slider(
-              value: mCurrentValue,
-              min: 1,
-              max: 10,
-              label: '$mCurrentValue',
-              divisions: 10,
-              onChanged: (e) {
-                setState(() {
-                  //四舍五入的双精度值
-                  mCurrentValue = e.roundToDouble();
-                });
-              }),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Minutes:"),
+              Slider(
+                  value: mCurrentValue,
+                  min: 1,
+                  max: 10,
+                  label: '$mCurrentValue',
+                  divisions: 10,
+                  onChanged: (e) {
+                    setState(() {
+                      //四舍五入的双精度值
+                      mCurrentValue = e.roundToDouble();
+                    });
+                  }),
+            ],
+          ),
           new RaisedButton(
             child: Text('Start'),
             color: Colors.blueAccent[600],
