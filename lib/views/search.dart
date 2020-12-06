@@ -46,8 +46,14 @@ class Search extends SearchDelegate<String> {
           Deck deck = folder.getDecks()[j];
           for (int k = 0; k < deck.getLength(); k++) {
             List cards = deck.getCards();
-            if (cards[k].getFront().contains(query) ||
-                cards[k].getBack().contains(query)) {
+            if (cards[k]
+                    .getFront()
+                    .toLowerCase()
+                    .contains(query.toLowerCase()) ||
+                cards[k]
+                    .getBack()
+                    .toLowerCase()
+                    .contains(query.toLowerCase())) {
               sList.add(cards[k]);
             }
           }

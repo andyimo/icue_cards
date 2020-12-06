@@ -107,7 +107,7 @@ class _MainDirectoryState extends State<MainDirectory> {
         DialogButton(
             child: Text(
               "Maybe Not",
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: TextStyle(color: Colors.white, fontSize: 18),
             ),
             onPressed: () => Navigator.pop(context),
             color: Colors.purple[900]),
@@ -202,7 +202,7 @@ class _MainDirectoryState extends State<MainDirectory> {
     List<Container> tempList = new List();
     for (int index = 0; index < folders.length; index++) {
       tempList.add(Container(
-        height: 120,
+        height: 110,
         width: 100,
         decoration: BoxDecoration(
           color: controller.isSelected(index) ? Colors.grey : Colors.white,

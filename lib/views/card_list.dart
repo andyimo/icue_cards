@@ -28,6 +28,11 @@ class _ListState extends State<Lists> {
   Deck deck;
   Root root;
   String title;
+  var selectedFolder;
+  var selectedDeck;
+  var selectedFolderName;
+  var selectedDeckName;
+  List<String> decks = [];
   _ListState(Deck deck, Root root) {
     this.deck = deck;
     this.root = root;
@@ -328,14 +333,16 @@ class _ListState extends State<Lists> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        height: 29,
-                        child: Text(
-                          front,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 22,
-                            color: Colors.black,
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 17.5, 0, 0),
+                          child: Text(
+                            front,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 21,
+                              color: Colors.black,
+                            ),
                           ),
                         ),
                       ),
@@ -343,13 +350,12 @@ class _ListState extends State<Lists> {
                         color: cardColor,
                         thickness: 2,
                       ),
-                      Container(
-                        height: 30,
+                      Expanded(
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                           child: Text(back,
                               textAlign: TextAlign.center,
-                              style: (TextStyle(fontSize: 22))),
+                              style: (TextStyle(fontSize: 19))),
                         ),
                       ),
                     ],
@@ -360,11 +366,6 @@ class _ListState extends State<Lists> {
   }
 
   Future _showDialog(context) async {
-    Folder selectedFolder;
-    Deck selectedDeck;
-    String selectedFolderName;
-    String selectedDeckName;
-    List<String> decks = [];
     return await showDialog<void>(
       context: context,
       builder: (BuildContext context) {
@@ -380,6 +381,7 @@ class _ListState extends State<Lists> {
                       selectedFolder = root
                           .getFolders()[root.getFolderNames().indexOf(value)];
                       decks = selectedFolder.getDeckNames();
+                      selectedDeckName = null;
                     });
                   },
                   hint: Text('Choose a Folder'),

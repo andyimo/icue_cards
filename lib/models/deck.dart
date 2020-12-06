@@ -15,7 +15,10 @@ class Deck {
   }
 
   void sortByName() {
-    _cards.sort((item1, item2) => item1.getBack().compareTo(item2.getBack()));
+    _cards.sort((item1, item2) => item1
+        .getFront()
+        .toLowerCase()
+        .compareTo(item2.getFront().toLowerCase()));
   }
 
   void setList(List<iCueCard> list) {

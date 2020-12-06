@@ -106,7 +106,7 @@ class _DirectoryDeckState extends State<DirectoryDeck> {
         DialogButton(
             child: Text(
               "Maybe Not",
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: TextStyle(color: Colors.white, fontSize: 18),
             ),
             onPressed: () => Navigator.pop(context),
             color: Colors.indigo),
