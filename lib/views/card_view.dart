@@ -221,14 +221,11 @@ class _CardViewState extends State<CardView> {
                 (CardSwipeOrientation orientation, int index) {
               if (orientation == CardSwipeOrientation.LEFT) {
                 _addToStream(cards, index);
+              } else if (orientation == CardSwipeOrientation.RIGHT ||
+                  orientation == CardSwipeOrientation.UP ||
+                  orientation == CardSwipeOrientation.DOWN) {
+                _keepStream(cards, index);
               }
-              // else if (orientation == CardSwipeOrientation.RIGHT ||
-              //     orientation == CardSwipeOrientation.UP ||
-              //     orientation == CardSwipeOrientation.DOWN) {
-              //   _keepStream(cards, index);
-              // }
-
-              /// Get orientation & index of swiped card!
             },
           ),
         ),
@@ -238,13 +235,13 @@ class _CardViewState extends State<CardView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-                  iconSize: 30,
+                  iconSize: 27.5,
                   icon: Icon(Icons.replay),
                   onPressed: () {
                     _refreshStream(oldCards, cards, false);
                   }),
               IconButton(
-                  iconSize: 30,
+                  iconSize: 27.5,
                   icon: Icon(Icons.shuffle),
                   onPressed: () {
                     _refreshStream(oldCards, cards, true);

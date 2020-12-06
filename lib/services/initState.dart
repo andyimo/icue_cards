@@ -214,7 +214,8 @@ Root initState() {
       frontSide: 'Behavioural Design Pattern',
       backSide:
           'Design pattern concerned with algorithms and assignment of responsibility between objects.',
-      color: Colors.indigo));
+      color: Colors.indigo,
+      image: AssetImage('assets/1.jpg')));
   deck5.addCard(new iCueCard(
       frontSide: 'Singleton',
       backSide:
