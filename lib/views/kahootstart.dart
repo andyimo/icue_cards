@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:audioplayers/audioplayers.dart';
-import 'kahoot.dart';
+//import 'package:audioplayers/audio_cache.dart';
+//import 'package:audioplayers/audioplayers.dart';
+import 'Kahoot.dart';
 
 class KahootStart extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _KahootStartState extends State<KahootStart> {
   int _dropNumValue = 5;
   int index = 0;
   int _currentIndex = 0;
-  AudioPlayer audioPlayer = AudioPlayer();
+  // AudioPlayer audioPlayer = AudioPlayer();
 
   @override
   Widget build(BuildContext context) {

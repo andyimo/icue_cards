@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:icue_cards/screens/home/home.dart';
 import 'headsupstart.dart';
-import 'kahootstart.dart';
+import 'Kahootstart.dart';
 
 /*void main() => runApp(MyApp());
 
@@ -29,9 +30,13 @@ class _GamePageState extends State<GamePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Game Page'),
-      ),
+      appBar: AppBar(title: Text("Game Page"), actions: [
+        IconButton(
+          icon: Icon(Icons.home),
+          onPressed: () => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Home())),
+        )
+      ]),
       body: Center(
         child: new Column(
           children: <Widget>[

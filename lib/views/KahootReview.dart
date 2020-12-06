@@ -1,8 +1,8 @@
-import '../models/iCueCard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'kahootstart.dart';
+import '../models/iCueCard.dart';
+import 'Kahootstart.dart';
+import 'KahootResult.dart';
 
 class Review extends StatefulWidget {
   final List<iCueCard> wronglist;
@@ -131,7 +131,7 @@ class _ReviewState extends State<Review> {
                   RaisedButton(
                     child: Text('Back to Start page!'),
                     onPressed: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => KahootStart())),
+                        MaterialPageRoute(builder: (context) => KahootResult())),
                   ),
                   Container(width: 10.0, height: 1.0),
                   RaisedButton(

@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'Review.dart';
+import 'KahootReview.dart';
 import '../models/iCueCard.dart';
-import 'kahootstart.dart';
+import 'Kahootstart.dart';
+import '../screens/home/home.dart';
 
 class KahootResult extends StatelessWidget {
   final String score;
@@ -13,7 +14,13 @@ class KahootResult extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Kahoot")),
+        appBar: AppBar(title: Text("Kahoot Result"), actions: [
+          IconButton(
+            icon: Icon(Icons.home),
+            onPressed: () => Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Home())),
+          )
+        ]),
         body: Center(
           child: new Column(
             children: <Widget>[
