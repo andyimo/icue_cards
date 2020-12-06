@@ -4,14 +4,19 @@ import 'dart:math';
 
 import '../models/iCueCard.dart';
 import 'KahootResult.dart';
+import 'Kahootstart.dart';
+import 'dart:async';
 
 class Kahoot extends StatefulWidget {
   final String category;
   final int questionNum;
-  Kahoot({this.category, this.questionNum});
+  final int timer;
+  final double mCurrentValue;
+  Kahoot({this.category, this.questionNum, this.timer, this.mCurrentValue});
 
   @override
-  _KahootState createState() => _KahootState(this.category, this.questionNum);
+  _KahootState createState() => _KahootState(
+      this.category, this.questionNum, this.timer, this.mCurrentValue);
 }
 
 class _KahootState extends State<Kahoot> {
@@ -21,12 +26,13 @@ class _KahootState extends State<Kahoot> {
   int index = 0;
   int _grade = 0;
   List<iCueCard> _wronglist = [];
-
-  _KahootState(String cactegory, int questionNum) {
-    _category = cactegory;
-    // ignore: unnecessary_statements
-    _qnum = questionNum;
-  }
+  int _timer = 1;
+  double _mCurrentValue = 0.0;
+  var str;
+  Duration time;
+  var seconds = 0;
+  Timer countdownTimer;
+  var _strtime = ' ';
 
   List<iCueCard> cards = [
     iCueCard(frontSide: 'comp', backSide: 'comp-CS'),
@@ -42,6 +48,44 @@ class _KahootState extends State<Kahoot> {
     iCueCard(frontSide: 'Earth', backSide: 'Earth-natural'),
   ];
 
+  _KahootState(
+      String cactegory, int questionNum, int timer, double mCurrentValue) {
+    _category = cactegory;
+    // ignore: unnecessary_statements
+    _qnum = questionNum;
+    _timer = timer;
+    _mCurrentValue = mCurrentValue * 60;
+    str = _mCurrentValue.toString();
+    str = str.replaceFirst(".0", " ");
+    seconds = int.parse(str);
+    //seconds = 8;
+    if (_timer == 1) {
+      _counttime(seconds, _strtime);
+    }
+  }
+
+  _counttime(int seconds, var strtime) {
+    countdownTimer =
+        new Timer.periodic(new Duration(seconds: 1), (Timer timer) {
+      if (seconds > 0) {
+        seconds--;
+        print(seconds);
+      } else {
+        countdownTimer.cancel();
+        strtime = "End of time";
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => KahootResult(
+                    score: "$_grade / $_qnum",
+                    wronglist: _wronglist,
+                    strtime: strtime,
+                  )),
+        );
+      }
+    });
+  }
+
   //this function is called when the player get the correct answer
   void _checkAnswer(int n, int nindex) {
     setState(() {
@@ -54,11 +98,15 @@ class _KahootState extends State<Kahoot> {
         //print("You got wrong answer. ${cards[_index]}");
       }
       if (index == (_qnum - 1)) {
+        countdownTimer.cancel();
         Navigator.push(
           context,
           MaterialPageRoute(
               builder: (context) => KahootResult(
-                  score: "$_grade / $index", wronglist: _wronglist)),
+                    score: "$_grade / $index",
+                    wronglist: _wronglist,
+                    strtime: _strtime,
+                  )),
         );
       }
       index++;
@@ -68,6 +116,12 @@ class _KahootState extends State<Kahoot> {
   List numberlist = [];
   @override
   Widget build(BuildContext context) {
+    /* if (cards.length <= 4 || _qnum > cards.length) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => KahootStart()),
+      );
+    }*/
     if (index == 0) {
       for (int i = 0; i < cards.length; i++) {
         numberlist.add(i);
@@ -96,37 +150,73 @@ class _KahootState extends State<Kahoot> {
     ];
     ans.insert(_correctindex, cards[numberlist[index]].getFront());
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Kahoot Game'),
-      ),
-      body: Center(
-        child: Column(children: [
-          new Text(
-            '${cards[numberlist[index]].getBack()}',
-            style: TextStyle(
-              fontSize: 50,
-              color: Colors.blue,
+    if (_timer == 1) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text('Kahoot Game'),
+        ),
+        body: Center(
+          child: Column(children: [
+            Container(width: 80.0, height: 10.0),
+            new Text(
+              '${cards[numberlist[index]].getBack()}',
+              style: TextStyle(
+                fontSize: 50,
+                color: Colors.blue,
+              ),
             ),
-          ),
-          new RaisedButton(
-            onPressed: () => _checkAnswer(0, numberlist[index]),
-            child: new Text('${ans[0]}'),
-          ),
-          new RaisedButton(
-            onPressed: () => _checkAnswer(1, numberlist[index]),
-            child: new Text('${ans[1]}'),
-          ),
-          new RaisedButton(
-            onPressed: () => _checkAnswer(2, numberlist[index]),
-            child: new Text('${ans[2]}'),
-          ),
-          new RaisedButton(
-            onPressed: () => _checkAnswer(3, numberlist[index]),
-            child: new Text('${ans[3]}'),
-          ),
-        ]),
-      ),
-    );
+            new RaisedButton(
+              onPressed: () => _checkAnswer(0, numberlist[index]),
+              child: new Text('${ans[0]}'),
+            ),
+            new RaisedButton(
+              onPressed: () => _checkAnswer(1, numberlist[index]),
+              child: new Text('${ans[1]}'),
+            ),
+            new RaisedButton(
+              onPressed: () => _checkAnswer(2, numberlist[index]),
+              child: new Text('${ans[2]}'),
+            ),
+            new RaisedButton(
+              onPressed: () => _checkAnswer(3, numberlist[index]),
+              child: new Text('${ans[3]}'),
+            ),
+          ]),
+        ),
+      );
+    } else {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text('Kahoot Game'),
+        ),
+        body: Center(
+          child: Column(children: [
+            new Text(
+              '${cards[numberlist[index]].getBack()}',
+              style: TextStyle(
+                fontSize: 50,
+                color: Colors.blue,
+              ),
+            ),
+            new RaisedButton(
+              onPressed: () => _checkAnswer(0, numberlist[index]),
+              child: new Text('${ans[0]}'),
+            ),
+            new RaisedButton(
+              onPressed: () => _checkAnswer(1, numberlist[index]),
+              child: new Text('${ans[1]}'),
+            ),
+            new RaisedButton(
+              onPressed: () => _checkAnswer(2, numberlist[index]),
+              child: new Text('${ans[2]}'),
+            ),
+            new RaisedButton(
+              onPressed: () => _checkAnswer(3, numberlist[index]),
+              child: new Text('${ans[3]}'),
+            ),
+          ]),
+        ),
+      );
+    }
   }
 }
