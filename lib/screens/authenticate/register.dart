@@ -54,7 +54,7 @@ class _RegisterState extends State<Register> {
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 20.0),
+                      SizedBox(height: 16.0),
                       TextFormField(
                         // decorations are cool
                         // they appear on the field line but disappear when you start typing
