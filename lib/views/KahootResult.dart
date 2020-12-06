@@ -1,48 +1,50 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'iCuecard.dart';
+
+import 'KahootReview.dart';
+import 'package:../models/iCueCard.dart';
 import 'Kahootstart.dart';
-import 'KahootResult.dart';
+import 'package:../screens/home/home.dart';
 
-class Review extends StatefulWidget {
+class KahootResult extends StatelessWidget {
+  final String score;
   final List<iCueCard> wronglist;
-
-  //var strtime;
-  Review({this.wronglist});
-  @override
-  _ReviewState createState() => _ReviewState(this.wronglist);
-}
-
-class _ReviewState extends State<Review> {
-  List<iCueCard> _wronglist;
-
-  //var _strtime;
-  _ReviewState(List<iCueCard> wronglist) {
-    _wronglist = wronglist;
-
-    //_strtime = strtime;
-  }
-  int index = 0;
+  var strtime;
+  KahootResult({this.score, this.wronglist, this.strtime});
 
   @override
   Widget build(BuildContext context) {
-    //print(_wronglist.length);
-    if (_wronglist.length == 0) {
-      return Scaffold(
-          appBar: AppBar(
-              title: Text(
-            "Review",
-          )),
-          body: Center(
-            child: Column(children: [
+    return Scaffold(
+        appBar: AppBar(title: Text("Kahoot Result"), actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.home),
+            onPressed: () => Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Home())),
+          )
+        ]),
+        body: Center(
+          child: new Column(
+            children: <Widget>[
               Text(
                 "   ",
                 style: TextStyle(
                   fontSize: 30,
                 ),
               ),
-              new Text(
-                "Nothing to review!",
+              Text(
+                "$strtime",
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+              ),
+              Text(
+                "",
+                style: TextStyle(
+                  fontSize: 10,
+                ),
+              ),
+              Text(
+                "Your grade is $score !",
                 style: TextStyle(
                   fontSize: 30,
                   color: Colors.blue,
@@ -51,102 +53,25 @@ class _ReviewState extends State<Review> {
               Text(
                 "   ",
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 20,
                 ),
               ),
-              RaisedButton(
-                child: Text(
-                  'Back to Start page!',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
+              new RaisedButton(
+                child: Text('Back to Start page!'),
+                color: Colors.blueAccent[600],
                 onPressed: () => Navigator.push(context,
                     MaterialPageRoute(builder: (context) => KahootStart())),
               ),
-            ]),
-          ));
-    } else {
-      return Scaffold(
-        appBar: AppBar(
-          title: Text("Review"),
-        ),
-        body: ConstrainedBox(
-          //ConstrainedBox(
-          constraints: BoxConstraints.expand(),
-          child: Stack(
-            alignment: Alignment.center, //指定未定位或部分定位widget的对齐方式
-            children: <Widget>[
-              Container(
-                //color: Colors.blue,
-                height: 430,
-                width: 270,
-                child: Column(
-                  children: <Widget>[
-                    Text(
-                      '${_wronglist[index].getFront()}',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 26,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.grey[700],
-                      ),
-                    ),
-                    Container(width: 80.0, height: 15.0),
-                    Divider(
-                      height: 2.0,
-                      color: Colors.grey[700],
-                    ),
-                    Container(width: 80.0, height: 15.0),
-                    Text(
-                      '${_wronglist[index].getBack()}',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.grey[700],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                bottom: 30.0,
-                child: Row(children: <Widget>[
-                  RaisedButton(
-                    child: Text('Prev'),
-                    onPressed: () {
-                      setState(() {
-                        if (index > 0) {
-                          index--;
-                        }
-                      });
-                    },
-                  ),
-                  Container(width: 10.0, height: 1.0),
-                  RaisedButton(
-                    child: Text('Back to Result page!'),
-                    onPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => KahootResult())),
-                  ),
-                  Container(width: 10.0, height: 1.0),
-                  RaisedButton(
-                    child: Text('Next'),
-                    onPressed: () {
-                      setState(() {
-                        if (index < _wronglist.length - 1) {
-                          index++;
-                        }
-                      });
-                    },
-                  ),
-                ]),
+              new RaisedButton(
+                child: Text('Review Wrong Question!'),
+                color: Colors.blueAccent[600],
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Review(wronglist: wronglist))),
               ),
             ],
           ),
-        ),
-      );
-    }
+        ));
   }
 }
