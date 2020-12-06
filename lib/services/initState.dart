@@ -21,12 +21,14 @@ Root initState() {
   Deck deck4 = Deck("Architectural Styles");
   Deck deck5 = Deck("Design Patterns");
   Deck deck6 = Deck("Test 3000 Folder");
+  Deck deck7 = Deck("Demo Design Patterns");
 
   folder.addDeck(deck);
   folder.addDeck(deck3);
   folder.addDeck(deck4);
   folder.addDeck(deck5);
   folder2.addDeck(deck6);
+  folder.addDeck(deck7);
 
   deck4.addCard(new iCueCard(
       frontSide: 'Standard Design Strategy',
@@ -182,37 +184,52 @@ Root initState() {
       frontSide: 'Design Pattern',
       backSide:
           'Typical solution to common problems in software design.\nThink of it like a blueprint you can customize to solve a particular design problem in your code.',
-      color: Colors.yellow));
+      color: Colors.grey));
   deck5.addCard(new iCueCard(
       frontSide: 'Creational Design Pattern',
       backSide:
           'Design pattern that provides various object cretion mechanisms, which increase flexibility and reuse of existing code.',
-      color: Colors.yellow));
+      color: Colors.green));
   deck5.addCard(new iCueCard(
       frontSide: 'Structural Design Pattern',
       backSide:
           'Design pattern that explains how to assemble objects and classes into larger structures while keeping these structures flexible and efficient',
-      color: Colors.yellow));
+      color: Colors.red));
   deck5.addCard(new iCueCard(
       frontSide: 'Behavioural Design Pattern',
       backSide:
           'Design pattern concerned with algorithms and assignment of responsibility between objects.',
-      color: Colors.yellow));
+      color: Colors.indigo));
+  deck7.addCard(new iCueCard(
+      frontSide: 'Creational Design Pattern',
+      backSide:
+          'Design pattern that provides various object cretion mechanisms, which increase flexibility and reuse of existing code.',
+      color: Colors.green));
+  deck7.addCard(new iCueCard(
+      frontSide: 'Structural Design Pattern',
+      backSide:
+          'Design pattern that explains how to assemble objects and classes into larger structures while keeping these structures flexible and efficient',
+      color: Colors.red));
+  deck7.addCard(new iCueCard(
+      frontSide: 'Behavioural Design Pattern',
+      backSide:
+          'Design pattern concerned with algorithms and assignment of responsibility between objects.',
+      color: Colors.indigo));
   deck5.addCard(new iCueCard(
       frontSide: 'Singleton',
       backSide:
           'Creational Design Pattern.\nLets you ensure that a class has only one instance, while providing a global access point to this instance.\nWhy use it: Provides stricter access to shared resources (like a database or a file). Great if clients should all be sharing a single instance of a class.',
-      color: Colors.yellow));
+      color: Colors.purple));
   deck5.addCard(new iCueCard(
       frontSide: 'Observer',
       backSide:
           'Behavioural Design Pattern.\n(aka. Event-Subscriber, Listener)\nLets you define a subscription mechanism to notify multiple objects about any events that happen to the object they are observing.',
-      color: Colors.yellow));
+      color: Colors.brown));
   deck5.addCard(new iCueCard(
       frontSide: 'Composite',
       backSide:
           'Structural Design Pattern.\nLets you compose objects into tree structures and then work with these structures as if they were individual objects. This pattern is useful if you want the client code to treat both simple and complex elements uniformly.',
-      color: Colors.yellow));
+      color: Colors.black));
   deck5.addCard(new iCueCard(
       frontSide: 'Strategy',
       backSide:
@@ -222,27 +239,27 @@ Root initState() {
       frontSide: 'Adaptor',
       backSide:
           'Structural Design Pattern.\n(aka. Wrapper)\nAllows objects with incompatible interfaces to collaborate. (e.g. a wrapper that converts XML files into JSON format to be passed into an Analytics library)',
-      color: Colors.yellow));
+      color: Colors.greenAccent));
   deck5.addCard(new iCueCard(
       frontSide: 'Facade',
       backSide:
           'Structural Design Pattern.\nProvides a simplified interface to a library, frameowkr or any complex set of classes. Use when you need an interface that is more straightforward and to the point.',
-      color: Colors.yellow));
+      color: Colors.teal));
   deck5.addCard(new iCueCard(
       frontSide: 'Template Method',
       backSide:
           'Behavioural Design Pattern.\nDefines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure. Use when several classes have similar algorithms with minor differences.',
-      color: Colors.yellow));
+      color: Colors.red[900]));
   deck5.addCard(new iCueCard(
       frontSide: 'Iterator',
       backSide:
           'Behavioural Design Pattern.\nLets you traverse elements of a collection without exposing its underlying representation (list, stack, tree, etc.). The main idea is to extract the traversal behaviour of a collection into a separate object.',
-      color: Colors.yellow));
+      color: Colors.pink));
   deck5.addCard(new iCueCard(
       frontSide: 'Decorator',
       backSide:
           'Structural Design Pattern.\nLets you attach new behaviours to objects by replacing these objects inside special wrapper objects that contain the behaviours. e.g. Assign extra behaviours to objects at runtime without breaking the code that uses these objects.',
-      color: Colors.yellow));
+      color: Colors.orange));
 
   deck.addCard(new iCueCard(
       frontSide: 'Heavyweight Process',
