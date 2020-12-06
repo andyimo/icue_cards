@@ -10,18 +10,25 @@ class KahootResult extends StatelessWidget {
   final String score;
   final List<iCueCard> wronglist;
   var strtime;
+  var str = " ";
   KahootResult({this.score, this.wronglist, this.strtime});
 
   @override
   Widget build(BuildContext context) {
+    if (strtime == null) {
+      strtime = '';
+    }
     return Scaffold(
-        appBar: AppBar(title: Text("Kahoot Result"), actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.home),
-            onPressed: () => Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Home())),
-          )
-        ]),
+        appBar: AppBar(
+            title: Text("Kahoot Result"),
+            automaticallyImplyLeading: false,
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.home),
+                onPressed: () => Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Home())),
+              )
+            ]),
         body: Center(
           child: new Column(
             children: <Widget>[
@@ -68,7 +75,10 @@ class KahootResult extends StatelessWidget {
                 onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Review(wronglist: wronglist))),
+                        builder: (context) => Review(
+                              score: score,
+                              wronglist: wronglist,
+                            ))),
               ),
             ],
           ),
