@@ -6,10 +6,10 @@ import '../models/root.dart';
 
 Root initState() {
   Root root = new Root("root");
-  Folder folder = Folder("COMP 3004");
-  Folder folder2 = Folder("COMP 3000");
-  Folder folder3 = Folder("COMP 3007");
-  Folder folder4 = Folder("COMP 3804");
+  Folder folder = Folder("CompSci");
+  Folder folder2 = Folder("Math");
+  Folder folder3 = Folder("Physics");
+  Folder folder4 = Folder("English");
 
   root.addFolder(folder);
   root.addFolder(folder2);
@@ -20,7 +20,7 @@ Root initState() {
   Deck deck3 = Deck("Software Architecture");
   Deck deck4 = Deck("Architectural Styles");
   Deck deck5 = Deck("Design Patterns");
-  Deck deck6 = Deck("Test 3000 Folder");
+  Deck deck6 = Deck("Linear Algebra");
   Deck deck7 = Deck("Demo Design Patterns");
 
   folder.addDeck(deck);
