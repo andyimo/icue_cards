@@ -335,7 +335,7 @@ class _ListState extends State<Lists> {
                     children: [
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(2.5, 17.5, 0, 2.5),
+                          padding: const EdgeInsets.fromLTRB(2.5, 15, 0, 2.5),
                           child: Text(
                             front,
                             textAlign: TextAlign.center,
