@@ -133,8 +133,8 @@ class _KahootState extends State<Kahoot> {
     _mCurrentValue = mCurrentValue * 60;
     str = _mCurrentValue.toString();
     str = str.replaceFirst(".0", " ");
-    //seconds = int.parse(str);
-    seconds = 8;
+    seconds = int.parse(str);
+    //seconds = 8;
     if (_timer == 1) {
       _counttime(seconds, _strtime);
     }
