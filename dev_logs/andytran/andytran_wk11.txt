@@ -11,18 +11,17 @@ Name   : Andy Tran (101124547)
    suffer using my old iMac that takes eons to load Android Studio and pull up
    the emulator)
  - Major problem after making the transition from Mac to Windows 10:
-   The command 'flutter pub get' does not work. The solution was to uninstall
-   McAffee Firewall which was interfering with this command trying to access
-   the flutter SDK.
+   The command 'flutter pub get' does not work. Surprisingly, the solution was to 
+   uninstall McAffee Firewall which was interfering with this command trying to 
+   access the flutter SDK.
  - Attempted to refactor my portion of the code after updating the dependencies
    in the pubspec.yaml file to their latest version so that my teammates in
    China might be able to access Firebase. Required a complete overhaul as
    parts of the codebase were broken and unusable.
- - On multiple occasions, login and registration stopped working completely
-   especially when trying to implement a toggle between these two pages. 
  - Found this tutorial from only two months ago on how to handle Firebase
    authentication in a clean, efficient way:
    https://www.youtube.com/watch?v=oJ5Vrya3wCQ&t=20s&ab_channel=RobertBrunhage
+ - Finally, my other teammates can login from their machines!
  - Finally sent the TA our gitHub link (whoops)
  - Major headache trying to implement a form of local storage and send data
    over to Firebase.
@@ -39,9 +38,13 @@ Name   : Andy Tran (101124547)
  - www.fontawesome.com has some universally useful symbols 
  - undraw.co has free illustrations that look great! 
  - I've included the fruit of 2 hours of ui design labour in this directory.
- - ??? hours I have sacrificed to bring this UI design into the app
+ - Fortunately, it only took about an hour to bring this design into the app 
+   I guess that goes to show how fast development is when you've got a plan 
 
- - To do: Write the final report for Deliverable 4
-          Learn to get the app up and running on my physical device (iPhone)
-          Practice for the presentation next week
-          Making the YouTube video has been delegated over to Henry (thankfully)
+ - Interviewed each teammate about their progress and wrote the report accordingly
+   (About 2 hrs of interviewing and 2 hrs of report writing)
+ - After Henry made screen recordings of the app on his physical device, he sent them
+   over to me so I could create the YouTube video. This took about 3 hrs to get done.
+   I create the video in iMovie and used rotato.xyz to get the 3D models of our app 
+   running on a phone 
+
