@@ -128,7 +128,7 @@ class _HeadsUpStartState extends State<HeadsUpStart> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Heads Up Page'),
+        title: Text('Heads Up!'),
       ),
       body: Center(
         child: Column(children: [

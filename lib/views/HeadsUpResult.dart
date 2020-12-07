@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'MistakesReview.dart';
+import 'headsupstart.dart';
 import '../models/root.dart';
 
 class HeadsUpResult extends StatefulWidget {
@@ -79,7 +80,7 @@ class _HeadsUpResultState extends State<HeadsUpResult> {
             ),
             new RaisedButton(
               //for the replay the game
-              child: Text('Play it Again'),
+              child: Text('Back to Start'),
               color: Colors.blueAccent[600],
               onPressed: () => Navigator.push(
                 context,
@@ -89,7 +90,7 @@ class _HeadsUpResultState extends State<HeadsUpResult> {
             ),
             new RaisedButton(
               //for review the mistakes
-              child: Text('Review the Unsuccess Guess'),
+              child: Text('Review Cards'),
               color: Colors.blueAccent[600],
               onPressed: () => Navigator.push(
                 context,

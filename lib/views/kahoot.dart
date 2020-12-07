@@ -7,7 +7,6 @@ import 'KahootResult.dart';
 import 'Kahootstart.dart';
 import 'dart:async';
 
-
 class Kahoot extends StatefulWidget {
   final String category;
   final int questionNum;

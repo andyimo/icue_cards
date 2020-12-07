@@ -121,8 +121,10 @@ class _CardViewState extends State<CardView> {
                   decoration: BoxDecoration(
                     boxShadow: [
                       BoxShadow(
-                        //color: cards[index].getColor(),
-                        color: Colors.grey,
+                        color: cards[index].getColor() == Colors.red
+                            ? cards[index].getColor()
+                            : Colors.white,
+                        //color: Colors.grey,
                         blurRadius: 2.0,
                         spreadRadius: 0.0,
                         offset:
@@ -134,8 +136,8 @@ class _CardViewState extends State<CardView> {
                         'assets/background.png',
                       ),
                       fit: BoxFit.fitHeight,
-                      // colorFilter: new ColorFilter.mode(
-                      //     Colors.black.withOpacity(0.98), BlendMode.dstATop),
+                      colorFilter: new ColorFilter.mode(
+                          Colors.black.withOpacity(0.5), BlendMode.dstATop),
                     ),
                     borderRadius: BorderRadius.circular(7.5),
                   ),

@@ -5,7 +5,7 @@ import 'HeadsUpResult.dart';
 import '../models/iCueCard.dart';
 import '../models/deck.dart';
 import 'dart:async';
-import 'package:flutter_sensors/flutter_sensors.dart';
+//import 'package:flutter_sensors/flutter_sensors.dart';
 import 'dart:math';
 import '../models/root.dart';
 
@@ -18,8 +18,11 @@ class HeadsUp extends StatefulWidget {
   HeadsUp({this.root, this.deck, this.category, this.questionNum});
 
   @override
-  _HeadsUpState createState() => 
-      _HeadsUpState(root: this.root, deck: this.deck, category: this.category, questionNum: this.questionNum);
+  _HeadsUpState createState() => _HeadsUpState(
+      root: this.root,
+      deck: this.deck,
+      category: this.category,
+      questionNum: this.questionNum);
 }
 
 class _HeadsUpState extends State<HeadsUp> {
@@ -27,7 +30,7 @@ class _HeadsUpState extends State<HeadsUp> {
   final Deck deck;
   final String category;
   final String questionNum;
-  _HeadsUpState({this. root, this.deck, this.category, this.questionNum});
+  _HeadsUpState({this.root, this.deck, this.category, this.questionNum});
 
   //the variable to record the score
   int _score = 0;
@@ -37,77 +40,74 @@ class _HeadsUpState extends State<HeadsUp> {
   //all the cards stored in this list
   List<iCueCard> tmp = new List<iCueCard>();
 
-
   //set a time counter for the game
-  int _counter = 5;
+  int _counter = 30;
   Timer _timer;
-  
+
   //store the wrong guess cards
   List<iCueCard> mistakes = [];
   int index = 0;
   bool isOver = false; //the boolen value which states if the game is over
   int roundNum;
 
+  /*
   //device titling
   bool _accelAvailable = false;
   bool _gyroAvailable = false;
   List<double> _accelData = List.filled(3, 0.0);
   List<double> _gyroData = List.filled(3, 0.0);
   StreamSubscription _accelSubscription;
-  StreamSubscription _gyroSubscription;
+  StreamSubscription _gyroSubscription;*/
 
   @override
   void initState() {
     //device titling
-    _checkAccelerometerStatus();
-    _checkGyroscopeStatus();
+    // _checkAccelerometerStatus();
+    //_checkGyroscopeStatus();
 
     super.initState();
-    
+
     // horizontal view
     SystemChrome.setPreferredOrientations(
-       [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
+        [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
 
     tmp = deck.getCards();
-    if(questionNum == "5"){
+    if (questionNum == "5") {
       roundNum = 5;
     }
-    if(questionNum == "10"){
+    if (questionNum == "10") {
       roundNum = 10;
     }
-    if(questionNum == "15"){
+    if (questionNum == "15") {
       roundNum = 15;
     }
-    if(questionNum == "20"){
+    if (questionNum == "20") {
       roundNum = 20;
     }
-    if(questionNum == "20"){
+    if (questionNum == "20") {
       roundNum = tmp.length;
     }
-    if(roundNum >= tmp.length){
+    if (roundNum >= tmp.length) {
       roundNum = tmp.length;
     }
 
     int tmplen = tmp.length; //record the current deck size
-    //randomly add the question to 
+    //randomly add the question to
     Random random = new Random();
     int ran;
-    if(roundNum != tmp.length){
-      for(int i=0; i<roundNum; i++){
+    if (roundNum != tmp.length) {
+      for (int i = 0; i < roundNum; i++) {
         ran = random.nextInt(tmplen);
         cards.add(tmp[ran]);
         tmp.removeAt(ran);
         tmplen--;
       }
-    }else{
+    } else {
       cards = tmp;
     }
 
-
-
     _startTimer();
-    _startAccelerometer(); //may not be used
-  
+    //_startAccelerometer(); //may not be used
   }
 
   //@override
@@ -117,7 +117,7 @@ class _HeadsUpState extends State<HeadsUp> {
     _stopGyroscope();
     super.dispose();
   }*/
-
+  /*
   void _checkAccelerometerStatus() async {
     await SensorManager()
         .isSensorAvailable(Sensors.ACCELEROMETER)
@@ -191,9 +191,7 @@ class _HeadsUpState extends State<HeadsUp> {
     if (_gyroSubscription == null) return;
     _gyroSubscription.cancel();
     _gyroSubscription = null;
-  }
-
-
+  }*/
 
   //this function is called when the player get the correct answer
   void _correctAnswer() {
@@ -203,7 +201,7 @@ class _HeadsUpState extends State<HeadsUp> {
       int length = cards.length; //check point is at length-1
       _startTimer();
       print("length is $length");
-      if (index == length-1) {
+      if (index == length - 1) {
         isOver = true;
         _timer.cancel();
         // _stopAccelerometer();
@@ -226,7 +224,7 @@ class _HeadsUpState extends State<HeadsUp> {
       //index++;
       int length = cards.length; //check point is at length-1
       _startTimer();
-      if (index == length-1) {
+      if (index == length - 1) {
         //determine if the game is over
         isOver = true;
         _timer.cancel();
@@ -244,7 +242,7 @@ class _HeadsUpState extends State<HeadsUp> {
 
   void _startTimer() {
     //_startAccelerometer();
-    _counter = 5;
+    _counter = 30;
     if (_timer != null) {
       _timer.cancel();
     }
@@ -254,7 +252,7 @@ class _HeadsUpState extends State<HeadsUp> {
           _counter--;
         } else {
           _timer.cancel();
-          if(index < cards.length){
+          if (index < cards.length) {
             _wrongAnswer();
           }
         }
@@ -262,15 +260,11 @@ class _HeadsUpState extends State<HeadsUp> {
     });
   }
 
-
-
-  
   @override
   Widget build(BuildContext context) {
     if (index >= cards.length) {
       //this if means checking when the index is out of range, reset into the range
       index = 0;
-      
     }
     var _keyword;
     _keyword = cards[index].getFront();
@@ -290,46 +284,45 @@ class _HeadsUpState extends State<HeadsUp> {
               ),
             ),
             Text(
-              '00:'+'$_counter',
+              '00:' + '$_counter',
               textAlign: TextAlign.right,
               style: TextStyle(
                 fontSize: 20.0,
-                color:Colors.red,
+                color: Colors.red,
               ),
             ),
-           
-              
           ],
         ),
       ),
-      
       floatingActionButton: Row(
         //two botton for count correct/wrong Answer
+
         children: [
-          FloatingActionButton(
-            child: Icon(Icons.done),
+          FloatingActionButton.extended(
+            label: Text('Correct!!!'),
+            icon: Icon(Icons.done),
+            backgroundColor: Colors.green,
             tooltip: 'correct answer',
-            onPressed:(){
+            onPressed: () {
               _correctAnswer();
               //_startTimer();
-            } ,
+            },
             heroTag: "first",
           ),
-          FloatingActionButton(
-            child: Icon(Icons.clear),
+          FloatingActionButton.extended(
+            label: Text('Get Wrong!!!'),
+            icon: Icon(Icons.clear),
+            backgroundColor: Colors.pink,
             tooltip: 'wrong answer',
-            onPressed:(){
+            onPressed: () {
               _wrongAnswer();
               //_startTimer();
-            } ,
+            },
             heroTag: "second",
           ),
-
         ],
-        
       ),
-      
-      
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
     // TODO: implement build
     //please add the navigation on main page, do not need to edit the code above

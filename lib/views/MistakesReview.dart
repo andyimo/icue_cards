@@ -68,7 +68,7 @@ class _MistakesReviewState extends State<MistakesReview> {
       var _back = _current.getFront();
       return Scaffold(
           appBar: AppBar(
-            title: Text("Review the Mistakes"),
+            title: Text("Review"),
           ),
           body: new Container(
             padding: const EdgeInsets.only(top: 10),

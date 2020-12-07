@@ -44,10 +44,10 @@ class _NewCardState extends State<NewCard> {
       try {
         final pickedFile = await _picker.getImage(
           source: source,
-          maxWidth: maxWidth,
-          maxHeight: maxHeight,
-          imageQuality: quality,
         );
+        if (pickedFile == null) {
+          return;
+        }
         setState(() {
           //_imageFile = pickedFile;
           _assetImage = AssetImage(pickedFile.path);
@@ -108,9 +108,6 @@ class _NewCardState extends State<NewCard> {
           child: Column(
             children: [
               TextField(
-                maxLength: 450,
-                minLines: 1,
-                maxLines: 7,
                 controller: titleController1,
                 autofocus: true,
                 onEditingComplete: create,
@@ -119,6 +116,9 @@ class _NewCardState extends State<NewCard> {
               ),
               SizedBox(height: 15),
               TextField(
+                maxLength: 450,
+                minLines: 1,
+                maxLines: 7,
                 controller: titleController2,
                 autofocus: true,
                 onEditingComplete: create,
@@ -149,6 +149,7 @@ class _NewCardState extends State<NewCard> {
                   InkWell(
                     onLongPress: () async {
                       if (_assetImage != null) {
+                        print(_assetImage);
                         await showDialog(
                             context: context,
                             builder: (_) => ImageDialog(_assetImage));
