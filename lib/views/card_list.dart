@@ -104,6 +104,7 @@ class _ListState extends State<Lists> {
             color: result['color'],
             image: result['image'] == null ? null : result['image'],
           ));
+          deck.sortByName();
           Get.snackbar(result['frontside'], 'Added');
         });
       }

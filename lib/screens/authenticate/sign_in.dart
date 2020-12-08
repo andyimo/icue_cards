@@ -52,6 +52,7 @@ class _SignInState extends State<SignIn> {
                       TextFormField(
                           decoration:
                               textInputDecoration.copyWith(hintText: 'Email'),
+                          //textInputDecoration.copyWith(hintText: 'Email'),
                           // val represents whatever is in the form field
                           validator: (val) =>
                               val.isEmpty ? 'Enter an email' : null,

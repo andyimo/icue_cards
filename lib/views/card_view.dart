@@ -104,7 +104,7 @@ class _CardViewState extends State<CardView> {
             swipeDown: false,
             orientation: AmassOrientation.TOP,
             totalNum: cards.length,
-            stackNum: 4,
+            stackNum: 3,
             swipeEdge: 5.0,
             maxWidth: MediaQuery.of(context).size.width * 0.86,
             maxHeight: MediaQuery.of(context).size.height * 0.8,
@@ -119,11 +119,21 @@ class _CardViewState extends State<CardView> {
                 front: Container(
                   //the card
                   decoration: BoxDecoration(
+                    //   boxShadow: [
+                    //     BoxShadow(
+                    //       //color: cards[index].getColor(),
+                    //       color: Colors.grey,
+                    //       blurRadius: 2.0,
+                    //       spreadRadius: 0.0,
+                    //       offset:
+                    //           Offset(0.5, 0.5), // shadow direction: bottom right
+                    //     )
+                    //   ],
                     boxShadow: [
                       BoxShadow(
                         color: cards[index].getColor() == Colors.red
                             ? cards[index].getColor()
-                            : Colors.white,
+                            : Colors.grey,
                         //color: Colors.grey,
                         blurRadius: 2.0,
                         spreadRadius: 0.0,
@@ -136,8 +146,10 @@ class _CardViewState extends State<CardView> {
                         'assets/background.png',
                       ),
                       fit: BoxFit.fitHeight,
-                      colorFilter: new ColorFilter.mode(
-                          Colors.black.withOpacity(0.5), BlendMode.dstATop),
+                      colorFilter: cards[index].getColor() == Colors.red
+                          ? ColorFilter.mode(
+                              Colors.black.withOpacity(0.5), BlendMode.dstATop)
+                          : null,
                     ),
                     borderRadius: BorderRadius.circular(7.5),
                   ),

@@ -133,52 +133,52 @@ Root initState() {
       frontSide: 'Software Architecture',
       backSide:
           'Set of principle design decisions governing a software system (structure, behaviour, interaction, non-functional properties)',
-      color: Colors.yellow));
+      color: Colors.black));
   deck3.addCard(new iCueCard(
       frontSide: 'Prescriptive Architecture',
       backSide:
           'Dictates how the system will be build a priori (as-conceived/as-intended)',
-      color: Colors.yellow));
+      color: Colors.black));
   deck3.addCard(new iCueCard(
       frontSide: 'Descriptive Architecture',
       backSide:
           'Describes how the system has actually been built (as-implemented/as-realized)',
-      color: Colors.yellow));
+      color: Colors.black));
   deck3.addCard(new iCueCard(
       frontSide: 'Architectural Degradation',
       backSide:
           'Adding new design decisions to an architecture that deviate from the Prescriptive Architecture. e.g. Architectural Drift and Architectural Erosion',
-      color: Colors.yellow));
+      color: Colors.black));
   deck3.addCard(new iCueCard(
       frontSide: 'Architecutral Drift',
       backSide:
           'The addition of new design decisions that aren\'t part of the Prescriptive Architecture but does not violate the overall design decisions',
-      color: Colors.yellow));
+      color: Colors.black));
   deck3.addCard(new iCueCard(
       frontSide: 'Architectural Erosion',
       backSide:
           'Incorporation of design decisions that VIOLATE the Prescriptive Architecture.',
-      color: Colors.yellow));
+      color: Colors.black));
   deck3.addCard(new iCueCard(
       frontSide: 'Architectural Recovery',
       backSide:
           'The act of reviewing the entire codebase to determine a software system\'s architecture.',
-      color: Colors.yellow));
+      color: Colors.black));
   deck3.addCard(new iCueCard(
       frontSide: 'Components',
       backSide:
           'Architectural entity that encapsulates a subset of the system functionality, restricts access via explicit interface, has explicit environmental dependencies',
-      color: Colors.yellow));
+      color: Colors.black));
   deck3.addCard(new iCueCard(
       frontSide: 'Connectors',
       backSide:
           'Architectural entity tasked with effecting and regulating interactions among components (e.g. procedure calls or shared data access)',
-      color: Colors.yellow));
+      color: Colors.black));
   deck3.addCard(new iCueCard(
       frontSide: 'Configuration',
       backSide:
           'aka. Topology\nSet of specific associations between components and connectors.',
-      color: Colors.yellow));
+      color: Colors.black));
 
   deck5.addCard(new iCueCard(
       frontSide: 'Design Pattern',

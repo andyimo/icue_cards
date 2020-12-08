@@ -87,6 +87,9 @@ class _HeadsUpState extends State<HeadsUp> {
     if (questionNum == "20") {
       roundNum = tmp.length;
     }
+    if (questionNum == "all") {
+      roundNum = tmp.length;
+    }
     if (roundNum >= tmp.length) {
       roundNum = tmp.length;
     }
